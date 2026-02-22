@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para Manuel Muñoz</title>
+
+<style>
+body{
+  margin:0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to bottom, #111, #1f1f1f);
+  color:white;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+  text-align:center;
+  padding:20px;
+}
+
+.container{
+  max-width:400px;
+}
+
+button{
+  padding:15px 25px;
+  margin-top:20px;
+  font-size:18px;
+  border:none;
+  border-radius:12px;
+  background:white;
+  color:black;
+  cursor:pointer;
+}
+
+.links button{
+  width:100%;
+  margin:10px 0;
+}
+
+.hidden{
+  display:none;
+}
+
+.fade{
+  animation: fadein 1s;
+}
+
+@keyframes fadein{
+  from{opacity:0;}
+  to{opacity:1;}
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div id="screen1" class="fade">
+<h2>Manuel Muñoz...</h2>
+<p>Tengo algo que mostrarte.</p>
+<button onclick="next(1)">Tocar aquí</button>
+</div>
+
+<div id="screen2" class="hidden">
+<h2>Estoy aprendiendo programación 💻</h2>
+<p>Y quise hacer algo diferente.</p>
+<button onclick="next(2)">Continúa</button>
+</div>
+
+<div id="screen3" class="hidden">
+<h2>Somos tu equipo ❤️</h2>
+<p>Virginia<br>Akemi<br>Christye<br>Luna 🐶<br>Fara 🐶</p>
+<button onclick="next(3)">Descubrir sorpresa</button>
+</div>
+
+<div id="screen4" class="hidden">
+<h2>Panel especial de Manuel Muñoz ♟</h2>
+<p>Hecho por Manolo mientras aprende programación.</p>
+
+<div class="links">
+<button onclick="window.open('https://www.chess.com','_blank')">♟ Jugar Ajedrez</button>
+<button onclick="window.open('https://www.youtube.com','_blank')">▶ Ver YouTube</button>
+<button onclick="window.open('https://rpp.pe/peru/cajamarca','_blank')">📰 Noticias Cajamarca</button>
+</div>
+
+</div>
+
+</div>
+
+<script>
+function next(screen){
+  document.getElementById("screen"+screen).classList.add("hidden");
+  document.getElementById("screen"+(screen+1)).classList.remove("hidden");
+  document.getElementById("screen"+(screen+1)).classList.add("fade");
+}
+</script>
+
+</body>
+</html>
