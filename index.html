@@ -1,474 +1,229 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Para Manuel Muñoz ♟</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Manuel Muñoz ♟</title>
 
-  <style>
-    :root{
-      --bg1:#0f0f0f;
-      --bg2:#1c1c1c;
-      --card:#151515;
-      --card2:#1b1b1b;
-      --text:#ffffff;
-      --muted:rgba(255,255,255,.78);
-      --soft:rgba(255,255,255,.12);
-      --soft2:rgba(255,255,255,.08);
-      --btn:#ffffff;
-      --btnText:#111;
-      --shadow: 0 10px 30px rgba(0,0,0,.35);
-      --radius: 16px;
-    }
+<style>
+:root{
+  --bg1:#0e0e0e;
+  --bg2:#1a1a1a;
+  --glass:rgba(255,255,255,.06);
+  --text:#fff;
+}
 
-    *{ box-sizing:border-box; }
+*{box-sizing:border-box}
 
-    body{
-      margin:0;
-      font-family: Arial, sans-serif;
-      color:var(--text);
-      min-height:100vh;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      padding:20px;
-      text-align:center;
+body{
+  margin:0;
+  font-family: Arial, sans-serif;
+  color:var(--text);
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:20px;
+  text-align:center;
 
-      /* Fondo estilo tablero + degradado */
-      background:
-        linear-gradient(45deg, rgba(255,255,255,0.06) 25%, transparent 25%),
-        linear-gradient(-45deg, rgba(255,255,255,0.06) 25%, transparent 25%),
-        linear-gradient(45deg, transparent 75%, rgba(255,255,255,0.06) 75%),
-        linear-gradient(-45deg, transparent 75%, rgba(255,255,255,0.06) 75%),
-        linear-gradient(to bottom, var(--bg1), var(--bg2));
-      background-size: 52px 52px;
-      background-position: 0 0, 0 26px, 26px -26px, -26px 0, 0 0;
-    }
+  background:
+    linear-gradient(45deg, rgba(255,255,255,0.05) 25%, transparent 25%),
+    linear-gradient(-45deg, rgba(255,255,255,0.05) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, rgba(255,255,255,0.05) 75%),
+    linear-gradient(-45deg, transparent 75%, rgba(255,255,255,0.05) 75%),
+    linear-gradient(to bottom, var(--bg1), var(--bg2));
+  background-size: 50px 50px;
+  background-position: 0 0, 0 25px, 25px -25px, -25px 0, 0 0;
+}
 
-    .container{
-      width:100%;
-      max-width:440px;
-      background: rgba(0,0,0,.12);
-      border: 1px solid rgba(255,255,255,.08);
-      border-radius: 20px;
-      padding: 22px 18px;
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(6px);
-    }
+.container{
+  width:100%;
+  max-width:430px;
+  padding:20px;
+  background:var(--glass);
+  border-radius:20px;
+  backdrop-filter:blur(8px);
+  box-shadow:0 15px 40px rgba(0,0,0,.4);
+  overflow:hidden;
+}
 
-    .title{
-      margin: 6px 0 8px;
-      font-size: 26px;
-      letter-spacing: .2px;
-    }
+section{
+  transition: all .4s ease;
+}
 
-    .subtitle{
-      margin: 0 0 14px;
-      color: var(--muted);
-      line-height: 1.35;
-      font-size: 16px;
-    }
+.hidden{
+  opacity:0;
+  transform:translateX(30px);
+  pointer-events:none;
+  position:absolute;
+}
 
-    .tiny{
-      margin-top: 10px;
-      color: rgba(255,255,255,.65);
-      font-size: 13px;
-      line-height: 1.35;
-    }
+.show{
+  opacity:1;
+  transform:translateX(0);
+  position:relative;
+}
 
-    .badge{
-      display:inline-block;
-      padding: 6px 10px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,.14);
-      background: rgba(255,255,255,.06);
-      font-size: 13px;
-      color: rgba(255,255,255,.85);
-      margin-bottom: 10px;
-    }
+button{
+  width:100%;
+  padding:14px;
+  margin-top:14px;
+  font-size:17px;
+  border:none;
+  border-radius:14px;
+  cursor:pointer;
+}
 
-    .btn{
-      width:100%;
-      padding: 15px 16px;
-      border: none;
-      border-radius: var(--radius);
-      background: var(--btn);
-      color: var(--btnText);
-      font-size: 18px;
-      cursor: pointer;
-      margin-top: 14px;
-      transition: transform .06s ease, opacity .2s ease;
-    }
-    .btn:active{ transform: scale(.99); }
-    .btn.secondary{
-      background: rgba(255,255,255,.10);
-      color: #fff;
-      border: 1px solid rgba(255,255,255,.14);
-    }
+.primary{
+  background:white;
+  color:black;
+}
 
-    .row{
-      display:flex;
-      gap:10px;
-      margin-top: 14px;
-    }
-    .row .btn{ margin-top:0; }
+.secondary{
+  background:rgba(255,255,255,.15);
+  color:white;
+  border:1px solid rgba(255,255,255,.2);
+}
 
-    .hidden{ display:none; }
+.grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+  margin-top:10px;
+}
 
-    .fade{
-      animation: fadeIn .55s ease;
-    }
-    @keyframes fadeIn{
-      from{ opacity:0; transform: translateY(6px); }
-      to{ opacity:1; transform: translateY(0); }
-    }
+.tile{
+  padding:15px;
+  background:rgba(255,255,255,.1);
+  border-radius:14px;
+  cursor:pointer;
+  transition:.2s;
+}
 
-    /* Panel tipo "tablero" */
-    .grid{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-      margin-top: 14px;
-    }
+.tile:hover{
+  background:rgba(255,255,255,.18);
+}
 
-    .tile{
-      background: rgba(255,255,255,.08);
-      border: 1px solid rgba(255,255,255,.12);
-      border-radius: 16px;
-      padding: 14px 12px;
-      text-align: left;
-      cursor: pointer;
-      transition: transform .06s ease, background .2s ease;
-      min-height: 74px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:10px;
-    }
+.glow{
+  animation:glowEffect 1.2s ease;
+}
 
-    .tile:active{ transform: scale(.99); }
-    .tile:hover{ background: rgba(255,255,255,.10); }
+@keyframes glowEffect{
+  0%{box-shadow:0 0 0px rgba(255,255,255,0);}
+  50%{box-shadow:0 0 25px rgba(255,255,255,.4);}
+  100%{box-shadow:0 0 0px rgba(255,255,255,0);}
+}
 
-    .tile .left{
-      display:flex;
-      flex-direction:column;
-      gap:4px;
-    }
+.star{
+  position:absolute;
+  animation:rise 1.5s ease forwards;
+  font-size:18px;
+}
 
-    .tile .k{
-      font-size: 14px;
-      color: rgba(255,255,255,.85);
-      margin:0;
-    }
+@keyframes rise{
+  from{opacity:1; transform:translateY(0);}
+  to{opacity:0; transform:translateY(-60px);}
+}
 
-    .tile .v{
-      font-size: 12.8px;
-      color: rgba(255,255,255,.65);
-      margin:0;
-      line-height:1.25;
-    }
+.back{
+  margin-top:10px;
+  font-size:13px;
+  opacity:.7;
+  cursor:pointer;
+}
 
-    .piece{
-      font-size: 22px;
-      opacity: .95;
-    }
-
-    .family{
-      margin: 10px 0 0;
-      color: rgba(255,255,255,.88);
-      line-height: 1.55;
-      font-size: 16px;
-    }
-
-    /* Estrellitas para Lieselotte */
-    .stars{
-      position: relative;
-      overflow:hidden;
-    }
-    .star{
-      position:absolute;
-      pointer-events:none;
-      opacity:.0;
-      animation: twinkle 1.35s ease forwards;
-      filter: drop-shadow(0 2px 6px rgba(255,255,255,.25));
-      font-size: 14px;
-    }
-    @keyframes twinkle{
-      0%{ transform: translateY(8px) scale(.8); opacity:0; }
-      15%{ opacity: .95; }
-      100%{ transform: translateY(-22px) scale(1.15); opacity:0; }
-    }
-
-    /* Texto tipo máquina de escribir */
-    .type{
-      min-height: 52px;
-      margin: 10px 0 0;
-      color: rgba(255,255,255,.88);
-      line-height: 1.45;
-      font-size: 16px;
-    }
-
-    /* Pie */
-    .footer{
-      margin-top: 14px;
-      font-size: 12.5px;
-      color: rgba(255,255,255,.55);
-    }
-
-    /* Accesibilidad: reduce motion */
-    @media (prefers-reduced-motion: reduce){
-      .fade, .star{ animation:none !important; }
-      .btn, .tile{ transition:none !important; }
-    }
-  </style>
+</style>
 </head>
 
 <body>
-  <div class="container">
+<div class="container">
 
-    <!-- SCREEN 1 -->
-    <section id="screen1" class="fade">
-      <div class="badge">♟ Tema: Ajedrez + Sorpresa</div>
-      <h1 class="title">Manuel Muñoz…</h1>
-      <p class="subtitle">¿Jugamos una partida rápida?</p>
+<section id="s1" class="show">
+<h2>Manuel Muñoz ♟</h2>
+<p>¿Jugamos una partida rápida?</p>
+<button class="primary" onclick="next('s2')">Mover pieza</button>
+</section>
 
-      <div class="type" id="type1"></div>
+<section id="s2" class="hidden">
+<h2>Apertura</h2>
+<p>Estoy aprendiendo programación…</p>
+<button class="primary" onclick="next('s3')">Continuar</button>
+<div class="back" onclick="next('s1')">⬅ Regresar</div>
+</section>
 
-      <button class="btn" onclick="goNext(1)">Mover pieza ♟</button>
-      <div class="footer">Hecho por Manolo (en celular) • 30s aprox.</div>
-    </section>
+<section id="s3" class="hidden">
+<h2>Tu equipo ❤️</h2>
+<p>
+Virginia<br>
+Akemi<br>
+Christye<br>
+Luna 🐶<br>
+Fara 🐶<br>
+<strong>Lieselotte 👶✨</strong>
+</p>
+<button class="primary" onclick="next('s4')">Ir al tablero</button>
+<div class="back" onclick="next('s2')">⬅ Regresar</div>
+</section>
 
-    <!-- SCREEN 2 -->
-    <section id="screen2" class="hidden">
-      <div class="badge">Apertura: paso a paso</div>
-      <h2 class="title">Estoy aprendiendo programación 💻</h2>
-      <p class="subtitle">Como estudiar ajedrez: una jugada a la vez.</p>
+<section id="s4" class="hidden">
+<h2>Tu tablero ♟</h2>
 
-      <div class="row">
-        <button class="btn secondary" onclick="chooseColor('blancas')">Jugar con blancas</button>
-        <button class="btn secondary" onclick="chooseColor('negras')">Jugar con negras</button>
-      </div>
+<div class="grid">
+<div class="tile" onclick="openLink('https://www.chess.com')">♟ Jugar</div>
+<div class="tile" onclick="openLink('https://www.chess.com/daily-puzzle')">🧩 Puzzle</div>
+<div class="tile" onclick="openLink('https://www.youtube.com')">▶ YouTube</div>
+<div class="tile" onclick="openLink('https://rpp.pe/peru/cajamarca')">📰 Cajamarca</div>
+<div class="tile" onclick="openLink('https://rpp.pe')">🗞 Perú</div>
+<div class="tile" onclick="next('s5')">👶 Lieselotte</div>
+</div>
 
-      <p class="tiny" id="colorHint">Elige un color (solo para hacerlo más interactivo 😉).</p>
-    </section>
+<button class="secondary" onclick="next('s1')">Reiniciar partida</button>
+<div class="back" onclick="next('s3')">⬅ Regresar</div>
+</section>
 
-    <!-- SCREEN 3 -->
-    <section id="screen3" class="hidden">
-      <div class="badge">Equipo de análisis ❤️</div>
-      <h2 class="title">Somos tu equipo</h2>
-      <p class="subtitle">Los que siempre estamos contigo, en cada jugada.</p>
+<section id="s5" class="hidden">
+<h2>Lieselotte 👶✨</h2>
+<p>Todo lo que aprendemos hoy también es por ella.</p>
+<button class="primary" onclick="stars()">Más estrellas ✨</button>
+<div class="back" onclick="next('s4')">⬅ Regresar</div>
+</section>
 
-      <div class="family" id="familyList">
-        Virginia<br>
-        Akemi<br>
-        Christye<br>
-        Luna 🐶<br>
-        Fara 🐶<br>
-        <strong>Lieselotte 👶✨</strong>
-      </div>
+</div>
 
-      <button class="btn" onclick="goNext(3)">Ir al panel ♟</button>
-      <div class="footer" id="colorFooter"></div>
-    </section>
+<script>
 
-    <!-- SCREEN 4 (PANEL) -->
-    <section id="screen4" class="hidden">
-      <div class="badge">Panel especial</div>
-      <h2 class="title">Manuel Muñoz ♟</h2>
-      <p class="subtitle">Tu tablero de hoy. Hecho por Manolo mientras aprende programación.</p>
+function next(id){
+document.querySelectorAll("section").forEach(s=>{
+s.classList.remove("show");
+s.classList.add("hidden");
+});
+const el=document.getElementById(id);
+el.classList.remove("hidden");
+el.classList.add("show");
 
-      <div class="grid">
-        <div class="tile" onclick="openLink('https://www.chess.com')">
-          <div class="left">
-            <p class="k">Jugar ajedrez</p>
-            <p class="v">Chess.com</p>
-          </div>
-          <div class="piece">♟</div>
-        </div>
+if(id==="s4"){
+el.classList.add("glow");
+setTimeout(()=>el.classList.remove("glow"),1200);
+}
+}
 
-        <div class="tile" onclick="openLink('https://www.chess.com/daily-puzzle')">
-          <div class="left">
-            <p class="k">Puzzle diario</p>
-            <p class="v">Entrena táctica</p>
-          </div>
-          <div class="piece">🧩</div>
-        </div>
+function openLink(url){
+window.open(url,'_blank');
+}
 
-        <div class="tile" onclick="openLink('https://www.youtube.com')">
-          <div class="left">
-            <p class="k">YouTube</p>
-            <p class="v">Videos y música</p>
-          </div>
-          <div class="piece">▶</div>
-        </div>
+function stars(){
+for(let i=0;i<15;i++){
+let star=document.createElement("div");
+star.className="star";
+star.innerHTML=Math.random()>0.5?"✨":"⭐";
+star.style.left=Math.random()*90+"%";
+star.style.top="70%";
+document.getElementById("s5").appendChild(star);
+setTimeout(()=>star.remove(),1500);
+}
+}
 
-        <div class="tile" onclick="openLink('https://rpp.pe/peru/cajamarca')">
-          <div class="left">
-            <p class="k">Cajamarca</p>
-            <p class="v">Noticias (RPP)</p>
-          </div>
-          <div class="piece">📰</div>
-        </div>
+</script>
 
-        <div class="tile" onclick="openLink('https://rpp.pe')">
-          <div class="left">
-            <p class="k">Perú</p>
-            <p class="v">Noticias nacionales</p>
-          </div>
-          <div class="piece">🗞️</div>
-        </div>
-
-        <div class="tile" onclick="showLieselotte()">
-          <div class="left">
-            <p class="k">Lieselotte</p>
-            <p class="v">Un mensaje especial</p>
-          </div>
-          <div class="piece">👶</div>
-        </div>
-      </div>
-
-      <button class="btn secondary" onclick="restart()">Volver al inicio</button>
-      <div class="footer">Tip: si te gustó, guárdalo como favorito ⭐</div>
-    </section>
-
-    <!-- SCREEN 5 (LIESELOTTE) -->
-    <section id="screen5" class="hidden stars">
-      <div class="badge">Nueva generación ✨</div>
-      <h2 class="title">Lieselotte 👶</h2>
-      <p class="subtitle">Una parte de este esfuerzo también es por ella.</p>
-
-      <div class="type" id="type5"></div>
-
-      <button class="btn" onclick="backToPanel()">Volver al panel ♟</button>
-      <button class="btn secondary" onclick="sparkle()">Más estrellitas ✨</button>
-      <div class="footer">— Manolo</div>
-    </section>
-
-  </div>
-
-  <script>
-    // ====== Config ======
-    const VIBE_MS = 20; // vibración corta (Android)
-    const TYPE_SPEED = 26; // ms por letra
-    let chosenColor = null;
-
-    // ====== Helpers ======
-    function vibe(ms = VIBE_MS){
-      try{
-        if (navigator.vibrate) navigator.vibrate(ms);
-      }catch(e){}
-    }
-
-    function show(id){
-      document.querySelectorAll("section").forEach(s => s.classList.add("hidden"));
-      const el = document.getElementById(id);
-      el.classList.remove("hidden");
-      el.classList.add("fade");
-      vibe();
-    }
-
-    function goNext(screenNum){
-      // screen1 -> screen2, screen3 -> screen4
-      if (screenNum === 1) show("screen2");
-      if (screenNum === 3) show("screen4");
-    }
-
-    function openLink(url){
-      vibe(30);
-      window.open(url, "_blank");
-    }
-
-    function restart(){
-      chosenColor = null;
-      document.getElementById("colorHint").textContent = "Elige un color (solo para hacerlo más interactivo 😉).";
-      document.getElementById("colorFooter").textContent = "";
-      show("screen1");
-      startIntroTyping();
-    }
-
-    // ====== Interacción: elegir color ======
-    function chooseColor(color){
-      chosenColor = color;
-      const txt = (color === "blancas")
-        ? "Elegiste BLANCAS: te gusta llevar la iniciativa."
-        : "Elegiste NEGRAS: te gusta responder con calma.";
-      document.getElementById("colorHint").textContent = txt + " Ahora sigue la partida.";
-      document.getElementById("colorFooter").textContent = "Color elegido: " + (color === "blancas" ? "BLANCAS" : "NEGRAS") + " ♟";
-
-      // pequeña pausa y a la siguiente pantalla
-      vibe(35);
-      setTimeout(() => show("screen3"), 500);
-    }
-
-    // ====== Máquina de escribir ======
-    function typeText(elId, text, speed = TYPE_SPEED, done){
-      const el = document.getElementById(elId);
-      el.textContent = "";
-      let i = 0;
-
-      const timer = setInterval(() => {
-        el.textContent += text.charAt(i);
-        i++;
-        if (i >= text.length){
-          clearInterval(timer);
-          if (done) done();
-        }
-      }, speed);
-    }
-
-    function startIntroTyping(){
-      const intro = "Toca el botón y avanzamos jugada por jugada.";
-      typeText("type1", intro);
-    }
-
-    function startLieselotteTyping(){
-      const msg =
-        "Me emociona pensar que todo lo que construimos hoy " +
-        "también es un regalo para su futuro.\n\n" +
-        "Gracias por estar, Manuel Muñoz.";
-      typeText("type5", msg, 18, () => sparkle());
-    }
-
-    // ====== Estrellitas ======
-    function sparkle(){
-      vibe(10);
-      const host = document.getElementById("screen5");
-      const count = 14;
-
-      for(let i=0;i<count;i++){
-        const s = document.createElement("div");
-        s.className = "star";
-        s.textContent = (Math.random() > 0.5) ? "✨" : "⭐";
-
-        const x = Math.random() * 100;
-        const y = 70 + Math.random() * 20; // base abajo
-        const delay = Math.random() * 0.45;
-
-        s.style.left = x + "%";
-        s.style.top = y + "%";
-        s.style.animationDelay = delay + "s";
-        s.style.fontSize = (12 + Math.random() * 10) + "px";
-        host.appendChild(s);
-
-        // limpiar
-        setTimeout(() => s.remove(), 1600);
-      }
-    }
-
-    // ====== Navegación a pantalla Lieselotte ======
-    function showLieselotte(){
-      show("screen5");
-      startLieselotteTyping();
-    }
-
-    function backToPanel(){
-      show("screen4");
-    }
-
-    // ====== Init ======
-    window.addEventListener("load", () => {
-      startIntroTyping();
-    });
-  </script>
 </body>
 </html>
