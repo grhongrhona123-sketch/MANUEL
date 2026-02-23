@@ -1,861 +1,639 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
-<title>♟ Para Manuel Muñoz</title>
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap');
-:root{
-  --w1:#2e1503;--w2:#4e2209;--w3:#6b3010;--w4:#8b4513;
-  --cr:#f5e6c8;--cr2:#eedcb0;--gd:#c8963e;--gd2:#e8b86d;--gd3:#f5d08a;
-  --tx:#2a1505;--mu:#7a4a28;
-  --sql:#f0d9b5;--sqd:#b58863;--r:14px;--r2:20px;
-}
-*{box-sizing:border-box;-webkit-tap-highlight-color:transparent;margin:0;padding:0}
-body{
-  font-family:'Lato',sans-serif;color:#fff;min-height:100vh;
-  display:flex;flex-direction:column;align-items:center;
-  padding:14px 10px 40px;overflow-x:hidden;position:relative;
-  background:linear-gradient(160deg,#3d1800 0%,#1a0800 45%,#0a0300 100%);
-}
-body::before{
-  content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
-  background-image:repeating-conic-gradient(rgba(200,150,62,.05) 0% 25%,transparent 0% 50%);
-  background-size:52px 52px;
-}
-.ptc{position:fixed;width:4px;height:4px;border-radius:50%;background:var(--gd);opacity:0;z-index:0;
-  animation:ptcUp var(--d,9s) var(--dl,0s) ease-in infinite;left:var(--x,50%);box-shadow:0 0 6px var(--gd2);}
-@keyframes ptcUp{0%{transform:translateY(105vh) scale(0);opacity:0}8%{opacity:.55}92%{opacity:.1}100%{transform:translateY(-8vh) scale(1.4);opacity:0}}
-.app{position:relative;z-index:1;width:100%;max-width:468px}
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#fbf6f0" />
+  <meta name="color-scheme" content="light" />
+  <title>Bautizo de Lieselotte — Invitación</title>
 
-/* HERO */
-.hero{text-align:center;padding:28px 20px 0;
-  background:linear-gradient(170deg,var(--w2),var(--w1));
-  border-radius:var(--r2) var(--r2) 0 0;border:1.5px solid var(--gd);border-bottom:none;position:relative;overflow:hidden;}
-.hero::after{content:'';position:absolute;inset:0;pointer-events:none;
-  background:radial-gradient(ellipse at 50% 0%,rgba(232,184,109,.15),transparent 70%);}
-.hero-crown{font-size:3rem;display:block;filter:drop-shadow(0 3px 12px rgba(232,184,109,.7));animation:bob 3s ease-in-out infinite}
-@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
-.hero h1{font-family:'Playfair Display',serif;font-size:1.8rem;color:var(--gd3);letter-spacing:.02em;margin:6px 0 4px;text-shadow:0 2px 14px rgba(0,0,0,.6)}
-.hero-sub{color:var(--cr2);font-size:.82rem;opacity:.85;padding-bottom:16px}
-.hero-band{background:linear-gradient(90deg,transparent,rgba(200,150,62,.2),transparent);height:1px;margin:0 -1px}
+  <meta name="description" content="Invitación interactiva al Bautizo de Lieselotte. Detalles, ubicaciones y confirmación por WhatsApp." />
+  <meta property="og:title" content="Bautizo de Lieselotte — Invitación" />
+  <meta property="og:description" content="Acompáñanos a celebrar. Toca para ver detalles y confirmar por WhatsApp." />
+  <meta property="og:type" content="website" />
 
-/* TABS */
-.tabs{display:flex;background:var(--w3);border-left:1.5px solid var(--gd);border-right:1.5px solid var(--gd);position:sticky;top:0;z-index:20}
-.tab{flex:1;padding:10px 4px 8px;text-align:center;cursor:pointer;font-size:.62rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--cr2);transition:background .2s;user-select:none}
-.tab:hover{background:var(--w2)}
-.tab.on{background:var(--cr);color:var(--w1);border-bottom:3px solid var(--gd);margin-bottom:-1px}
-.tab .ti{display:block;font-size:1.15rem;margin-bottom:2px}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-/* CARD */
-.card{background:var(--cr);border:1.5px solid var(--gd);border-top:none;border-radius:0 0 var(--r2) var(--r2);overflow:hidden;box-shadow:0 12px 40px rgba(40,15,0,.4)}
+  <style>
+    :root{
+      --bg1:#fff7f0;
+      --ink:#2b1f1a;
+      --mut:#6c5b52;
+      --gold:#c79a44;
+      --gold2:#e9c77c;
+      --stroke:#f1e1cf;
+      --r:18px; --r2:24px;
+      --shadow: 0 14px 50px rgba(35, 20, 10, .10);
+      --shadow2: 0 10px 28px rgba(35, 20, 10, .08);
+      --font1:"Playfair Display", serif;
+      --font2:"Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:var(--font2);
+      color:var(--ink);
+      background: radial-gradient(1200px 700px at 20% 10%, #fff 0%, var(--bg1) 45%, #fff 100%);
+      overflow-x:hidden;
+    }
+    .sr{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
+    .bg{position:fixed;inset:0;pointer-events:none;z-index:0}
+    .orb{
+      position:absolute;border-radius:999px;filter:blur(28px);opacity:.65;
+      background: radial-gradient(circle at 30% 30%, #fff, #ffd9c8 60%, #fff0 75%);
+      animation: float 10s ease-in-out infinite;
+    }
+    .o1{width:220px;height:220px;left:-60px;top:80px}
+    .o2{width:260px;height:260px;right:-80px;top:160px;animation-duration:12s;opacity:.55}
+    .o3{width:260px;height:260px;left:20%;bottom:-120px;animation-duration:14s;opacity:.5}
+    .spr{
+      position:absolute;opacity:.28;
+      background:
+        radial-gradient(circle at 30% 30%, rgba(199,154,68,.55), transparent 60%),
+        radial-gradient(circle at 70% 70%, rgba(255,180,155,.55), transparent 60%),
+        radial-gradient(circle at 50% 10%, rgba(255,255,255,.75), transparent 60%);
+      mix-blend-mode:multiply;border-radius:999px;
+    }
+    .spr-1{width:140px;height:140px;left:16px;bottom:140px}
+    .spr-2{width:110px;height:110px;right:30px;bottom:220px}
+    .spr-3{width:160px;height:160px;right:10%;top:40px}
+    @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
 
-/* PANELS */
-.pnl{display:none;padding:18px 16px 24px;animation:pIn .3s ease}
-.pnl.on{display:block}
-@keyframes pIn{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
+    .app{position:relative;z-index:1;max-width:560px;margin:0 auto;padding:18px 12px 34px}
+    .hero{
+      background: linear-gradient(180deg, rgba(255,255,255,.85), rgba(255,255,255,.55));
+      border:1px solid var(--stroke);
+      border-radius: var(--r2);
+      box-shadow: var(--shadow);
+      padding:16px 14px 14px;
+      backdrop-filter: blur(8px);
+    }
+    .hero-top{display:flex;justify-content:space-between;align-items:center;gap:10px}
+    .badge{
+      display:inline-flex;align-items:center;gap:8px;
+      font-size:.78rem;padding:8px 10px;border-radius:999px;
+      background: linear-gradient(135deg, rgba(199,154,68,.18), rgba(255,180,155,.12));
+      border:1px solid rgba(199,154,68,.25);
+      color:#5b463a;font-weight:600;
+    }
+    .icon-btn{
+      border:none;background:transparent;cursor:pointer;
+      width:38px;height:38px;border-radius:12px;
+      border:1px solid rgba(199,154,68,.25);
+      display:flex;align-items:center;justify-content:center;
+      box-shadow: var(--shadow2);
+      color:#5b463a;
+    }
+    .icon-btn:active{transform:scale(.98)}
 
-/* MENSAJE */
-.gift-wrap{background:linear-gradient(145deg,var(--w1),var(--w3));border-radius:var(--r2);padding:22px 18px;text-align:center;border:1.5px solid var(--gd);position:relative;overflow:hidden}
-.gift-wrap::before{content:'♚ ♛ ♜ ♝ ♞ ♟';position:absolute;bottom:-6px;left:0;right:0;text-align:center;font-size:1.4rem;opacity:.07;letter-spacing:4px}
-.gift-quote{font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--cr);line-height:1.65;font-style:italic}
-.gift-sig{margin-top:14px;color:var(--gd2);font-size:.82rem;letter-spacing:.07em}
-.gift-sig::before{content:'— '}
-.divider{display:flex;align-items:center;gap:10px;color:var(--mu);font-size:.75rem;margin:16px 0 12px}
-.divider::before,.divider::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--gd),transparent);opacity:.5}
-.info-card{background:linear-gradient(135deg,#fff8ee,#fdefd4);border-left:4px solid var(--gd);border-radius:0 var(--r) var(--r) 0;padding:14px 16px;position:relative;overflow:hidden}
-.info-card::after{content:'♟';position:absolute;right:12px;top:50%;transform:translateY(-50%);font-size:2.4rem;opacity:.08}
-.info-card .ic-label{font-size:.68rem;color:var(--gd);font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-bottom:5px}
-.info-card p{color:var(--tx);font-size:.87rem;line-height:1.55}
-.qstats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:14px}
-.qstat{background:linear-gradient(135deg,var(--w2),var(--w1));border-radius:var(--r);padding:12px 8px;text-align:center;border:1px solid rgba(200,150,62,.3)}
-.qstat .qn{font-family:'Playfair Display',serif;font-size:1.35rem;color:var(--gd3)}
-.qstat .ql{font-size:.62rem;color:var(--cr2);opacity:.8;margin-top:2px;line-height:1.3}
-.btn-go{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;margin-top:14px;padding:14px;border:none;border-radius:var(--r);
-  background:linear-gradient(135deg,var(--gd),var(--gd2));color:var(--w1);font-weight:700;font-size:.92rem;cursor:pointer;
-  transition:transform .12s,box-shadow .15s;box-shadow:0 4px 14px rgba(200,150,62,.4)}
-.btn-go:hover{box-shadow:0 6px 20px rgba(200,150,62,.5)}.btn-go:active{transform:scale(.97)}
+    .hero-title{text-align:center;position:relative;padding:18px 10px 6px;margin-top:10px}
+    .halo{
+      position:absolute;width:190px;height:190px;border-radius:999px;
+      left:50%;top:10px;transform:translateX(-50%);
+      background: radial-gradient(circle at 50% 40%, rgba(233,199,124,.35), rgba(255,255,255,0) 70%);
+      filter: blur(2px);opacity:.9;
+    }
+    h1{margin:0;font-family:var(--font1);font-size:1.75rem;letter-spacing:.01em}
+    .gold{
+      background: linear-gradient(135deg, var(--gold), var(--gold2));
+      -webkit-background-clip:text;background-clip:text;
+      color:transparent;
+      text-shadow: 0 8px 24px rgba(199,154,68,.25);
+    }
+    .sub{margin:8px auto 0;max-width:38ch;color:var(--mut);font-size:.95rem;line-height:1.45}
+    .hero-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+    .btn{
+      border:none;cursor:pointer;border-radius:16px;padding:12px 12px;
+      font-weight:800;display:flex;align-items:center;justify-content:center;gap:10px;
+      box-shadow: var(--shadow2);
+      transition:transform .1s ease, box-shadow .12s ease;
+      user-select:none;
+    }
+    .btn:active{transform:scale(.99)}
+    .primary{background: linear-gradient(135deg, var(--gold), var(--gold2));color:#2b1f1a}
+    .ghost{background: rgba(255,255,255,.85);border:1px solid rgba(199,154,68,.25);color:#5b463a}
+    .bi{font-size:1.05rem}.bt{font-size:.95rem}
 
-/* DATOS */
-.fact-card{background:linear-gradient(135deg,#fff8ee,#fdefd4);border-radius:var(--r2);padding:18px 16px;border:1.5px solid var(--gd);position:relative;overflow:hidden;cursor:pointer;transition:transform .15s;min-height:110px}
-.fact-card:hover{transform:translateY(-2px)}
-.fact-icon{font-size:2.2rem;display:block;margin-bottom:8px}
-.fact-num{font-size:.68rem;color:var(--gd);font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px}
-.fact-text{color:var(--tx);font-size:.88rem;line-height:1.6}
-.fact-hint{text-align:center;font-size:.72rem;color:var(--mu);margin-top:8px}
-.fact-dots{display:flex;justify-content:center;gap:5px;margin:10px 0}
-.fdot{width:7px;height:7px;border-radius:50%;background:rgba(139,69,19,.2);transition:.2s;cursor:pointer}
-.fdot.on{background:var(--gd);transform:scale(1.3)}
+    .hero-note{
+      margin-top:12px;display:flex;align-items:flex-start;gap:10px;
+      color:#6a5a50;font-size:.82rem;padding:10px 12px;border-radius:16px;
+      border:1px dashed rgba(199,154,68,.35);background: rgba(255,255,255,.65);
+    }
+    .dot{width:10px;height:10px;border-radius:999px;background:linear-gradient(135deg,var(--gold),#ffb49b);margin-top:4px}
 
-/* JUGAR */
-.level-row{display:flex;gap:6px;margin-bottom:10px}
-.lv-btn{flex:1;padding:8px 4px;border:none;border-radius:10px;cursor:pointer;font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em;background:rgba(46,21,3,.12);color:var(--mu);border:1px solid rgba(200,150,62,.25);transition:.15s}
-.lv-btn.on{background:linear-gradient(135deg,var(--w3),var(--w2));color:var(--gd2);border-color:var(--gd)}
-.players-bar{display:flex;align-items:center;justify-content:space-between;background:linear-gradient(135deg,var(--w1),var(--w3));border-radius:var(--r2);padding:12px 16px;margin-bottom:10px;border:1.5px solid var(--gd)}
-.plr{text-align:center}
-.plr-ico{font-size:1.8rem;display:block;filter:drop-shadow(0 2px 6px rgba(0,0,0,.4))}
-.plr-name{font-size:.72rem;color:var(--gd2);font-weight:700;margin-top:2px}
-.plr-sub{font-size:.62rem;color:var(--cr2);opacity:.75}
-.vs-pill{background:rgba(200,150,62,.15);border:1px solid var(--gd);border-radius:999px;padding:6px 12px;font-size:.8rem;color:var(--gd2);font-weight:700}
-.cap-row{display:flex;align-items:center;gap:6px;background:rgba(46,21,3,.08);border-radius:10px;padding:6px 10px;margin-bottom:8px;min-height:30px;border:1px solid rgba(200,150,62,.18)}
-.cap-lbl{font-size:.62rem;color:var(--mu);white-space:nowrap}
-.cap-pcs{font-size:.9rem;flex:1;letter-spacing:1px;color:var(--tx)}
-.cap-sc{font-size:.68rem;color:var(--w3);font-weight:700}
+    .tabs{
+      margin-top:12px;display:flex;gap:8px;position:sticky;top:0;z-index:10;
+      padding:10px 0;backdrop-filter: blur(8px);
+    }
+    .tab{
+      flex:1;padding:10px 8px;border-radius:16px;cursor:pointer;
+      border:1px solid rgba(199,154,68,.22);background: rgba(255,255,255,.82);
+      color:#5b463a;font-weight:900;box-shadow: var(--shadow2);
+    }
+    .tab.on{
+      background: linear-gradient(135deg, rgba(199,154,68,.20), rgba(255,180,155,.14));
+      border-color: rgba(199,154,68,.35);
+    }
 
-/* TABLERO */
-.board-shell{background:var(--w1);border-radius:var(--r2);border:2.5px solid var(--gd);padding:8px;box-shadow:0 10px 32px rgba(30,10,0,.5);position:relative}
-.thinking-veil{position:absolute;inset:0;border-radius:calc(var(--r2) - 2px);background:rgba(20,8,0,.65);display:none;flex-direction:column;align-items:center;justify-content:center;gap:8px;z-index:10}
-.thinking-veil.on{display:flex}
-.tv-sp{font-size:2.4rem;animation:spin 1s linear infinite}
-@keyframes spin{to{transform:rotate(360deg)}}
-.tv-txt{color:var(--gd2);font-size:.88rem;font-weight:700}
-.coord-row{display:flex;padding:0 22px}
-.coord-row span{flex:1;text-align:center;font-size:.58rem;color:var(--gd2);opacity:.55}
-.board-mid{display:flex}
-.coord-col{display:flex;flex-direction:column;width:20px}
-.coord-col span{flex:1;font-size:.58rem;color:var(--gd2);opacity:.55;display:flex;align-items:center;justify-content:center}
-.chessboard{display:grid;grid-template-columns:repeat(8,1fr);flex:1;aspect-ratio:1;border:1.5px solid rgba(200,150,62,.5);border-radius:3px;overflow:hidden}
-.sq{aspect-ratio:1;display:flex;align-items:center;justify-content:center;font-size:clamp(1.25rem,5.2vw,1.95rem);cursor:pointer;position:relative;user-select:none;transition:filter .1s}
-.sq.l{background:var(--sql)}.sq.d{background:var(--sqd)}
-.sq.sel{background:#f6f669!important}
-.sq.vm{background:#cdd16f!important}
-.sq.vm.hp{box-shadow:inset 0 0 0 4px rgba(200,150,62,.75)}
-.sq.vm.hp::after{display:none}
-.sq.vm::after{content:'';position:absolute;width:30%;height:30%;background:rgba(0,0,0,.18);border-radius:50%;pointer-events:none}
-.sq.lf,.sq.lt{filter:brightness(1.18)}
-.sq.ck{background:#e74c3c!important}
-.sq .sqc{position:absolute;font-size:.52rem;opacity:.4;color:var(--tx);font-weight:700;line-height:1}
-.sq .sqc.bl{bottom:2px;left:3px}.sq .sqc.tr{top:2px;right:3px}
-.status{margin-top:10px;padding:10px 14px;background:linear-gradient(135deg,rgba(46,21,3,.9),rgba(78,34,9,.9));border-radius:var(--r);text-align:center;color:var(--cr);font-size:.82rem;min-height:38px;line-height:1.45;border:1px solid rgba(200,150,62,.25)}
-.moves-wrap{margin-top:8px;background:rgba(46,21,3,.08);border-radius:var(--r);padding:8px 10px;border:1px solid rgba(200,150,62,.18)}
-.moves-title{font-size:.65rem;color:var(--mu);font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px}
-.moves-scroll{max-height:58px;overflow-y:auto;font-size:.72rem;color:var(--tx);line-height:1.85;word-break:break-all}
-.moves-scroll::-webkit-scrollbar{width:3px}
-.moves-scroll::-webkit-scrollbar-thumb{background:var(--w3);border-radius:4px}
-.btns-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin-top:10px}
-.bw{padding:11px 6px;border:none;border-radius:var(--r);background:linear-gradient(135deg,var(--w3),var(--w2));color:var(--gd2);font-size:.7rem;font-weight:700;cursor:pointer;border:1px solid rgba(200,150,62,.35);transition:transform .12s,opacity .15s;letter-spacing:.02em;line-height:1.3;display:flex;flex-direction:column;align-items:center;gap:3px}
-.bw .bi{font-size:1rem}
-.bw:hover{opacity:.85}.bw:active{transform:scale(.94)}
-.bw.full{grid-column:1/-1;padding:13px;background:linear-gradient(135deg,var(--gd),var(--gd2));color:var(--w1);font-weight:700;font-size:.9rem;flex-direction:row;gap:8px;justify-content:center;box-shadow:0 4px 14px rgba(200,150,62,.35)}
-.bw.full:hover{box-shadow:0 6px 20px rgba(200,150,62,.5)}
+    .card{
+      margin-top:10px;border-radius: var(--r2);border:1px solid var(--stroke);
+      background: rgba(255,255,255,.78);box-shadow: var(--shadow);overflow:hidden;
+    }
+    .panel{display:none;padding:16px 14px 18px}
+    .panel.on{display:block;animation: in .25s ease}
+    @keyframes in{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
 
-/* LINKS */
-.links-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.lnk{background:linear-gradient(145deg,var(--w2),var(--w1));border-radius:var(--r2);padding:16px 10px;text-align:center;cursor:pointer;border:1px solid rgba(200,150,62,.4);transition:transform .15s,box-shadow .15s}
-.lnk:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(30,10,0,.35)}.lnk:active{transform:scale(.96)}
-.lnk .li{font-size:1.7rem;display:block;margin-bottom:6px}
-.lnk .lt{font-size:.75rem;font-weight:700;color:var(--gd2);text-transform:uppercase;letter-spacing:.04em}
-.lnk .ls{font-size:.66rem;color:var(--cr2);opacity:.75;margin-top:3px}
-.lnk.s2{grid-column:1/-1}
-.lnk.ft{background:linear-gradient(145deg,#4a1f06,#2e1202);border-color:var(--gd);border-width:1.5px}
+    .panel-head h2{margin:2px 0 4px;font-family: var(--font1);font-size:1.25rem}
+    .panel-head p{margin:0 0 14px;color:var(--mut);line-height:1.45}
 
-/* TOAST */
-.toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%) translateY(18px);background:linear-gradient(135deg,var(--w1),var(--w2));color:var(--cr);border:1.5px solid var(--gd);border-radius:999px;padding:10px 22px;font-size:.83rem;opacity:0;transition:.25s ease;z-index:300;box-shadow:0 10px 28px rgba(0,0,0,.6);pointer-events:none;max-width:90vw;text-align:center}
-.toast.on{opacity:1;transform:translateX(-50%) translateY(0)}
-.footer{text-align:center;margin-top:18px;font-size:.72rem;color:rgba(232,184,109,.6);font-style:italic}
-.footer strong{color:var(--gd2);font-style:normal}
-</style>
+    .story{display:grid;gap:10px}
+    .story-card{
+      background: rgba(255,255,255,.90);
+      border:1px solid rgba(199,154,68,.22);
+      border-radius: var(--r2);
+      padding:14px 14px;box-shadow: var(--shadow2);
+      outline:none;position:relative;overflow:hidden;
+    }
+    .story-card::after{
+      content:"";position:absolute;inset:-2px;
+      background: radial-gradient(420px 220px at 15% 0%, rgba(233,199,124,.22), transparent 60%),
+                  radial-gradient(420px 220px at 95% 100%, rgba(255,180,155,.18), transparent 55%);
+      pointer-events:none;
+    }
+    .sc-ico{font-size:1.35rem}
+    .story-card h3{margin:6px 0 4px;font-family:var(--font1)}
+    .story-card p{margin:0;color:var(--mut);line-height:1.45}
+    .sc-foot{margin-top:10px;color:#7a665a;font-weight:900;font-size:.82rem}
+
+    .grid2{display:grid;grid-template-columns:1fr;gap:12px}
+    @media (min-width:560px){.grid2{grid-template-columns:1fr 1fr}}
+
+    .info,.loc,.confirm{
+      background: rgba(255,255,255,.92);
+      border:1px solid rgba(199,154,68,.20);
+      border-radius: var(--r2);
+      padding:14px 14px;box-shadow: var(--shadow2);
+    }
+    .pill{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:8px 10px;border-radius:999px;font-weight:900;
+      background: rgba(199,154,68,.12);
+      border:1px solid rgba(199,154,68,.20);
+      color:#5b463a;font-size:.85rem;
+    }
+    .info-body{margin-top:10px;display:grid;gap:10px}
+    .row{display:flex;gap:10px;align-items:flex-start}
+    .row span{width:22px;display:inline-flex;justify-content:center}
+    .row strong{font-size:1.02rem}
+    .info-note{
+      margin-top:12px;color:var(--mut);
+      background: rgba(255,180,155,.10);
+      border:1px dashed rgba(255,180,155,.35);
+      padding:10px 12px;border-radius:16px;line-height:1.45;
+    }
+    .quote{
+      margin-top:12px;padding:14px 14px;border-radius: var(--r2);
+      border:1px solid rgba(199,154,68,.18);
+      background: linear-gradient(135deg, rgba(233,199,124,.18), rgba(255,255,255,.75));
+      box-shadow: var(--shadow2);
+    }
+    .quote p{margin:0;font-family:var(--font1);font-size:1.02rem;line-height:1.55}
+    .quote span{display:block;margin-top:10px;color:#5b463a;font-weight:900}
+
+    .loc-top{display:flex;gap:10px;align-items:center}
+    .loc-ico{width:40px;height:40px;border-radius:14px;display:flex;align-items:center;justify-content:center;
+      background: linear-gradient(135deg, rgba(199,154,68,.18), rgba(255,180,155,.16));
+      border:1px solid rgba(199,154,68,.25);box-shadow: var(--shadow2);
+    }
+    .loc h3{margin:0;font-family:var(--font1)}
+    .loc p{margin:2px 0 0;color:var(--mut)}
+    .mini-map{
+      margin:12px 0;height:130px;border-radius: var(--r2);
+      border:1px solid rgba(199,154,68,.18);
+      background:
+        radial-gradient(260px 140px at 20% 20%, rgba(233,199,124,.22), transparent 55%),
+        radial-gradient(260px 140px at 80% 80%, rgba(255,180,155,.20), transparent 55%),
+        linear-gradient(180deg, rgba(255,255,255,.75), rgba(251,246,240,.95));
+      overflow:hidden;box-shadow: var(--shadow2);
+      position:relative;
+    }
+    .mm-pin{
+      position:absolute;left:50%;top:50%;
+      width:18px;height:18px;border-radius:999px;
+      transform:translate(-50%,-70%);
+      background: linear-gradient(135deg, var(--gold), var(--gold2));
+      box-shadow: 0 8px 18px rgba(199,154,68,.25);
+    }
+    .mm-pin::after{
+      content:"";position:absolute;left:50%;top:70%;
+      width:10px;height:10px;border-radius:2px;
+      transform:translate(-50%,0) rotate(45deg);
+      background: linear-gradient(135deg, var(--gold), var(--gold2));
+    }
+    .mm-txt{
+      position:absolute;left:12px;bottom:10px;
+      font-weight:900;color:#5b463a;font-size:.9rem;opacity:.85
+    }
+    .small{margin-top:10px;color:var(--mut);font-size:.85rem;line-height:1.35}
+
+    .confirm-head{display:flex;gap:10px;align-items:center}
+    .confirm-ico{
+      width:44px;height:44px;border-radius:16px;
+      display:flex;align-items:center;justify-content:center;
+      background: linear-gradient(135deg, rgba(255,180,155,.18), rgba(233,199,124,.20));
+      border:1px solid rgba(199,154,68,.22);box-shadow: var(--shadow2);
+      font-size:1.2rem;
+    }
+    .confirm h3{margin:0;font-family:var(--font1)}
+    .confirm p{margin:2px 0 0;color:var(--mut)}
+    .choice{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+    .field{margin-top:12px}
+    .field label{display:block;font-weight:900;color:#5b463a;margin:0 0 6px}
+    .field input{
+      width:100%;padding:12px 12px;border-radius:16px;
+      border:1px solid rgba(199,154,68,.25);
+      background: rgba(255,255,255,.95);
+      box-shadow: var(--shadow2);
+      font-size:1rem;outline:none;
+    }
+    .field input:focus{border-color: rgba(199,154,68,.45)}
+    .divider{height:1px;background:rgba(199,154,68,.18);margin:14px 0}
+    .final h4{margin:0 0 6px;font-family:var(--font1)}
+    .final p{margin:0;color:#5b463a;line-height:1.45;font-weight:900}
+
+    .toast{
+      position:fixed;left:50%;bottom:18px;
+      transform:translateX(-50%) translateY(18px);
+      opacity:0;
+      background: rgba(255,255,255,.92);
+      border:1px solid rgba(199,154,68,.25);
+      border-radius:999px;padding:10px 16px;
+      box-shadow: var(--shadow);
+      color:#5b463a;font-weight:900;
+      max-width:92vw;text-align:center;
+      transition:.22s ease;z-index:50;
+    }
+    .toast.on{opacity:1;transform:translateX(-50%) translateY(0)}
+    .footer{margin-top:16px;text-align:center;color: rgba(90,70,58,.75);font-style: italic}
+  </style>
 </head>
 <body>
-<div class="ptc" style="--x:4%;--d:9s;--dl:0s"></div>
-<div class="ptc" style="--x:15%;--d:12s;--dl:2.5s"></div>
-<div class="ptc" style="--x:28%;--d:8s;--dl:5s"></div>
-<div class="ptc" style="--x:44%;--d:14s;--dl:1s"></div>
-<div class="ptc" style="--x:60%;--d:10s;--dl:3.5s"></div>
-<div class="ptc" style="--x:75%;--d:11s;--dl:.8s"></div>
-<div class="ptc" style="--x:90%;--d:7s;--dl:4s"></div>
-
-<div class="app">
-  <div class="hero">
-    <span class="hero-crown">♛</span>
-    <h1>Manuel Muñoz</h1>
-    <p class="hero-sub">Una experiencia de ajedrez hecha con cariño 🎁</p>
-  </div>
-  <div class="hero-band"></div>
-
-  <div class="tabs">
-    <div class="tab on"  onclick="goTab('mensaje')"><span class="ti">💌</span>Regalo</div>
-    <div class="tab"     onclick="goTab('datos')"  ><span class="ti">📖</span>Datos</div>
-    <div class="tab"     onclick="goTab('jugar')"  ><span class="ti">♟</span>Jugar</div>
-    <div class="tab"     onclick="goTab('links')"  ><span class="ti">🔗</span>Links</div>
+  <div class="bg" aria-hidden="true">
+    <div class="orb o1"></div>
+    <div class="orb o2"></div>
+    <div class="orb o3"></div>
+    <div class="spr spr-1"></div>
+    <div class="spr spr-2"></div>
+    <div class="spr spr-3"></div>
   </div>
 
-  <div class="card">
+  <main class="app" id="app">
+    <header class="hero">
+      <div class="hero-top">
+        <span class="badge">✦ Invitación interactiva</span>
+        <button class="icon-btn" id="shareBtn" type="button" title="Compartir">
+          <span aria-hidden="true">↗</span><span class="sr">Compartir</span>
+        </button>
+      </div>
 
-    <!-- MENSAJE -->
-    <div id="pnl-mensaje" class="pnl on">
-      <div class="gift-wrap">
-        <div class="gift-quote">"Esto fue diseñado por Manolo,<br>que está aprendiendo programación."</div>
-        <div class="gift-sig">Con cariño, para el mejor papá ajedrecista ♟</div>
+      <div class="hero-title">
+        <div class="halo" aria-hidden="true"></div>
+        <h1>Bautizo de <span class="gold">Lieselotte</span></h1>
+        <p class="sub">Un día para celebrar su luz y su primera bendición</p>
       </div>
-      <div class="qstats">
-        <div class="qstat"><div class="qn">1500+</div><div class="ql">Años de historia del ajedrez</div></div>
-        <div class="qstat"><div class="qn">10¹²⁰</div><div class="ql">Partidas posibles en el mundo</div></div>
-        <div class="qstat"><div class="qn">♟</div><div class="ql">Un regalo hecho con código y amor</div></div>
-      </div>
-      <div class="divider">¿Listo para jugar, papá?</div>
-      <div class="info-card">
-        <div class="ic-label">💡 Dato rápido</div>
-        <p>"Jaque mate" viene del persa <em>Shāh māt</em> — "El rey ha muerto". Cada partida es una batalla de reyes.</p>
-      </div>
-      <button class="btn-go" onclick="goTab('jugar')">♟ Jugar contra la computadora →</button>
-    </div>
 
-    <!-- DATOS -->
-    <div id="pnl-datos" class="pnl">
-      <div class="fact-card" onclick="nextFact()">
-        <span class="fact-icon" id="fic">♟</span>
-        <div class="fact-num"  id="fnum">Dato #1 de 10</div>
-        <p class="fact-text"   id="ftxt"></p>
+      <div class="hero-actions">
+        <button class="btn primary" id="musicBtn" type="button">
+          <span class="bi" aria-hidden="true">▶</span>
+          <span class="bt">Música (demo)</span>
+        </button>
+        <button class="btn ghost" id="startBtn" type="button">
+          <span class="bi" aria-hidden="true">✨</span>
+          <span class="bt">Ver invitación</span>
+        </button>
       </div>
-      <div class="fact-dots" id="fdots"></div>
-      <p class="fact-hint">Toca la tarjeta para pasar al siguiente dato</p>
-      <button class="btn-go" onclick="nextFact()" style="margin-top:10px">📖 Siguiente dato →</button>
-    </div>
 
-    <!-- JUGAR -->
-    <div id="pnl-jugar" class="pnl">
-      <div class="level-row">
-        <button class="lv-btn"    id="lv1" onclick="setLv(1)">🐣 Fácil</button>
-        <button class="lv-btn on" id="lv2" onclick="setLv(2)">⚔️ Medio</button>
-        <button class="lv-btn"    id="lv3" onclick="setLv(3)">🔥 Difícil</button>
-        <button class="lv-btn"    id="lv4" onclick="setLv(4)">💀 Experto</button>
+      <div class="hero-note">
+        <span class="dot" aria-hidden="true"></span>
+        <span>Esto es un diseño preliminar. Luego podrás cambiar textos, fotos y poner tu música real.</span>
       </div>
-      <div class="players-bar">
-        <div class="plr"><span class="plr-ico">🤖</span><div class="plr-name">Computadora</div><div class="plr-sub" id="cpu-lv">Nivel medio</div></div>
-        <div class="vs-pill">VS</div>
-        <div class="plr"><span class="plr-ico">👑</span><div class="plr-name">Manuel Muñoz</div><div class="plr-sub">Piezas blancas</div></div>
-      </div>
-      <div class="cap-row"><span class="cap-lbl">🤖 capturó:</span><span class="cap-pcs" id="cap-c"></span><span class="cap-sc" id="sc-c"></span></div>
-      <div class="board-shell">
-        <div class="thinking-veil" id="veil"><span class="tv-sp">♞</span><p class="tv-txt">Computadora pensando…</p></div>
-        <div class="coord-row" id="ct"></div>
-        <div class="board-mid">
-          <div class="coord-col" id="cl"></div>
-          <div class="chessboard" id="cb"></div>
-          <div class="coord-col" id="cright"></div>
+    </header>
+
+    <nav class="tabs" aria-label="Secciones">
+      <button class="tab on" data-tab="momentos" type="button">Momentos</button>
+      <button class="tab" data-tab="detalles" type="button">Detalles</button>
+      <button class="tab" data-tab="ubicaciones" type="button">Ubicaciones</button>
+      <button class="tab" data-tab="confirmar" type="button">Confirmar</button>
+    </nav>
+
+    <section class="card">
+      <div class="panel on" id="momentos" role="tabpanel">
+        <div class="panel-head">
+          <h2>Momentos</h2>
+          <p>Toca las tarjetas para avanzar. Es una mini historia.</p>
         </div>
-        <div class="coord-row" id="cbot"></div>
+
+        <div class="story" id="story">
+          <article class="story-card" tabindex="0">
+            <div class="sc-ico" aria-hidden="true">🕊️</div>
+            <h3>Hoy comienza un camino</h3>
+            <p>Presentamos a Lieselotte ante Dios, con amor y gratitud.</p>
+            <div class="sc-foot">Toca para continuar →</div>
+          </article>
+
+          <article class="story-card" tabindex="0">
+            <div class="sc-ico" aria-hidden="true">🌸</div>
+            <h3>Una vida, una luz</h3>
+            <p>Su sonrisa cambió la forma en que vemos el mundo.</p>
+            <div class="sc-foot">Toca para continuar →</div>
+          </article>
+
+          <article class="story-card" tabindex="0">
+            <div class="sc-ico" aria-hidden="true">✨</div>
+            <h3>Fe que abraza</h3>
+            <p>Que su vida crezca guiada por amor, fe y esperanza.</p>
+            <div class="sc-foot">Toca para continuar →</div>
+          </article>
+
+          <article class="story-card" tabindex="0">
+            <div class="sc-ico" aria-hidden="true">👨‍👩‍👧</div>
+            <h3>Familia</h3>
+            <p>Este día es más bonito si lo compartimos contigo.</p>
+            <div class="sc-foot">Toca para continuar →</div>
+          </article>
+
+          <article class="story-card" tabindex="0">
+            <div class="sc-ico" aria-hidden="true">💛</div>
+            <h3>Gracias</h3>
+            <p>Tu presencia será el mejor regalo para Lieselotte.</p>
+            <div class="sc-foot">Toca para repetir ↺</div>
+          </article>
+        </div>
       </div>
-      <div class="cap-row" style="margin-top:8px"><span class="cap-lbl">👑 capturó:</span><span class="cap-pcs" id="cap-h"></span><span class="cap-sc" id="sc-h"></span></div>
-      <div class="status" id="status">Elige nivel y toca "Nueva Partida" 👇</div>
-      <div class="moves-wrap">
-        <div class="moves-title">📋 Registro de jugadas</div>
-        <div class="moves-scroll" id="mscroll">—</div>
+
+      <div class="panel" id="detalles" role="tabpanel">
+        <div class="panel-head">
+          <h2>Detalles</h2>
+          <p>Información clara, bonita y lista para compartir.</p>
+        </div>
+
+        <div class="grid2">
+          <article class="info">
+            <span class="pill">⛪ Ceremonia religiosa</span>
+            <div class="info-body">
+              <div class="row"><span>📅</span><div><strong>Sábado 07 de marzo</strong></div></div>
+              <div class="row"><span>🕐</span><div><strong>01:00 p. m.</strong></div></div>
+              <div class="row"><span>📍</span><div><strong>Iglesia El Sagrado Corazón</strong></div></div>
+            </div>
+            <div class="info-note">La ceremonia inicia puntualmente. ¡Gracias por tu puntualidad!</div>
+          </article>
+
+          <article class="info">
+            <span class="pill">🎉 Recepción</span>
+            <div class="info-body">
+              <div class="row"><span>🕒</span><div><strong>03:00 p. m.</strong></div></div>
+              <div class="row"><span>📍</span><div><strong>Salón Jardín “El Castillo”</strong></div></div>
+              <div class="row"><span>👗</span><div><strong>Vestimenta:</strong> tonos claros / semi formal</div></div>
+            </div>
+            <div class="info-note">Después del bautizo, nos encantaría compartir este momento contigo.</div>
+          </article>
+        </div>
+
+        <div class="quote">
+          <p>“Hoy confiamos su vida a la luz de Dios, para que cada paso suyo esté lleno de bendición.”</p>
+          <span>Con amor, Manuel &amp; Christye</span>
+        </div>
       </div>
-      <div class="btns-grid">
-        <button class="bw" onclick="undoMove()"><span class="bi">↩</span>Deshacer</button>
-        <button class="bw" onclick="flipBoard()"><span class="bi">⇅</span>Girar</button>
-        <button class="bw" onclick="toggleHints()"><span class="bi" id="hico">💡</span><span id="hlbl">Pistas ON</span></button>
-        <button class="bw" onclick="copyPGN()"><span class="bi">📋</span>Copiar</button>
-        <button class="bw full" onclick="newGame()">♟ Nueva Partida</button>
+
+      <div class="panel" id="ubicaciones" role="tabpanel">
+        <div class="panel-head">
+          <h2>Ubicaciones</h2>
+          <p>Preliminar: los botones abren Google Maps genérico. Luego lo reemplazas con links reales.</p>
+        </div>
+
+        <div class="grid2">
+          <article class="loc">
+            <div class="loc-top">
+              <div class="loc-ico" aria-hidden="true">⛪</div>
+              <div>
+                <h3>Iglesia El Sagrado Corazón</h3>
+                <p>Ceremonia — 01:00 p. m.</p>
+              </div>
+            </div>
+            <div class="mini-map">
+              <div class="mm-pin" aria-hidden="true"></div>
+              <div class="mm-txt">Mapa de referencia</div>
+            </div>
+            <button class="btn primary" type="button" id="mapChurch">📍 Ver en Google Maps</button>
+            <div class="small">Luego pondrás el link real de la iglesia.</div>
+          </article>
+
+          <article class="loc">
+            <div class="loc-top">
+              <div class="loc-ico" aria-hidden="true">🎉</div>
+              <div>
+                <h3>Salón Jardín “El Castillo”</h3>
+                <p>Recepción — 03:00 p. m.</p>
+              </div>
+            </div>
+            <div class="mini-map">
+              <div class="mm-pin" aria-hidden="true"></div>
+              <div class="mm-txt">Mapa de referencia</div>
+            </div>
+            <button class="btn primary" type="button" id="mapHall">📍 Ver en Google Maps</button>
+            <div class="small">Luego pondrás el link real del salón.</div>
+          </article>
+        </div>
       </div>
-    </div>
 
-    <!-- LINKS -->
-    <div id="pnl-links" class="pnl">
-      <div class="links-grid">
-        <div class="lnk ft" onclick="openLink('https://lichess.org')"><span class="li">⚡</span><div class="lt">Partida rápida</div><div class="ls">Lichess · gratis</div></div>
-        <div class="lnk"    onclick="openLink('https://lichess.org/training')"><span class="li">🧩</span><div class="lt">Puzzles</div><div class="ls">Táctica gratis</div></div>
-        <div class="lnk"    onclick="openLink('https://lichess.org/analysis')"><span class="li">🔎</span><div class="lt">Análisis</div><div class="ls">Motor / estudio</div></div>
-        <div class="lnk"    onclick="openLink('https://lichess.org/learn')"><span class="li">🎓</span><div class="lt">Aprender</div><div class="ls">Lecciones</div></div>
-        <div class="lnk"    onclick="openLink('https://www.chess.com/es')"><span class="li">🌐</span><div class="lt">Chess.com</div><div class="ls">Mayor plataforma</div></div>
-        <div class="lnk"    onclick="openLink('https://www.youtube.com/results?search_query=ajedrez+tacticas')"><span class="li">▶</span><div class="lt">YouTube</div><div class="ls">Videos tácticos</div></div>
-        <div class="lnk s2 ft" onclick="openLink('https://rpp.pe/peru/cajamarca')"><span class="li">📰</span><div class="lt">Noticias de Cajamarca</div><div class="ls">RPP · al día con tu región</div></div>
+      <div class="panel" id="confirmar" role="tabpanel">
+        <div class="panel-head">
+          <h2>Confirmación</h2>
+          <p>Preliminar: abre WhatsApp con un mensaje listo (número demo). Luego cambias el número.</p>
+        </div>
+
+        <article class="confirm">
+          <div class="confirm-head">
+            <div class="confirm-ico" aria-hidden="true">💬</div>
+            <div>
+              <h3>Confirma tu asistencia</h3>
+              <p>Así organizamos todo con cariño.</p>
+            </div>
+          </div>
+
+          <div class="choice">
+            <button class="btn primary" type="button" id="rsvpYes">✅ Sí, asistiré</button>
+            <button class="btn ghost" type="button" id="rsvpNo">😢 No podré</button>
+          </div>
+
+          <div class="field">
+            <label for="guestName">Tu nombre (opcional)</label>
+            <input id="guestName" maxlength="40" placeholder="Ej: Tía Rosa" />
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="final">
+            <h4>Mensaje final</h4>
+            <p id="finalTxt">Te esperamos con amor. — Familia Muñoz Ochoa</p>
+          </div>
+
+          <button class="btn primary" type="button" id="copyBtn">📋 Copiar texto</button>
+        </article>
+
+        <footer class="footer">
+          Hecho con ❤️ para celebrar a <strong>Lieselotte</strong>
+        </footer>
       </div>
-    </div>
+    </section>
 
-  </div>
-  <div class="footer">Hecho con ❤️ por <strong>Manolo</strong> — aprendiendo a programar 🚀</div>
-</div>
-<div class="toast" id="toast"></div>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </main>
 
-<script>
-/* ════════════════════════════════════════
-   UTILIDADES
-════════════════════════════════════════ */
-function goTab(id){
-  document.querySelectorAll('.pnl').forEach(p=>p.classList.remove('on'));
-  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('on'));
-  document.getElementById('pnl-'+id).classList.add('on');
-  ['mensaje','datos','jugar','links'].forEach((t,i)=>{
-    if(t===id) document.querySelectorAll('.tab')[i].classList.add('on');
-  });
-  window.scrollTo({top:0,behavior:'smooth'});
-  if(id==='datos') renderFact();
-}
-let _tt=null;
-function tip(m,d=3200){
-  const t=document.getElementById('toast');
-  t.textContent=m;t.classList.add('on');
-  clearTimeout(_tt);_tt=setTimeout(()=>t.classList.remove('on'),d);
-}
-function openLink(u){window.open(u,'_blank','noopener')}
-function setSt(m){document.getElementById('status').textContent=m}
+  <script>
+    const CONFIG = {
+      babyName: "Lieselotte",
+      familyLine: "Familia Muñoz Ochoa",
+      parentsLine: "Manuel & Christye",
+      dateLong: "Sábado 07 de marzo",
+      timeCeremony: "01:00 p. m.",
+      timeReception: "03:00 p. m.",
+      churchName: "Iglesia El Sagrado Corazón",
+      hallName: "Salón Jardín “El Castillo”",
+      mapsChurch: "https://www.google.com/maps",
+      mapsHall: "https://www.google.com/maps",
+      whatsappNumber: "51999999999" // DEMO: cambia luego
+    };
 
-/* ════════════════════════════════════════
-   DATOS CURIOSOS
-════════════════════════════════════════ */
-const FACTS=[
-  {i:'🏛️',t:"El ajedrez nació hace más de 1500 años en India como 'Chaturanga'. Viajó a Persia, el mundo árabe y finalmente conquistó Europa."},
-  {i:'🌌',t:"El número de partidas posibles supera 10¹²⁰ — más que átomos en el universo. A esto se le llama el 'Número de Shannon'."},
-  {i:'⏳',t:"La partida oficial más larga de la historia duró 269 movimientos y terminó en tablas. Una épica batalla de resistencia."},
-  {i:'👑',t:"El peón puede coronarse al llegar al extremo del tablero. Esta jugada, llamada 'coronación', puede salvar partidas perdidas."},
-  {i:'🏆',t:"Bobby Fischer aprendió a jugar solo con un manual a los 6 años. Se convirtió en gran maestro a los 15 y campeón mundial a los 29."},
-  {i:'🏰',t:"El 'Enroque' es la única jugada donde el rey se mueve dos casillas y una torre puede saltar sobre otra pieza."},
-  {i:'⚔️',t:"'Jaque mate' viene del persa Shāh māt: 'El rey ha muerto'. Miles de años de historia en dos palabras."},
-  {i:'📈',t:"Magnus Carlsen alcanzó el ELO más alto de la historia: 2882 puntos. El campeón más dominante de la era moderna."},
-  {i:'🏔️',t:"En Cajamarca, el ajedrez forma parte de los Juegos Deportivos Escolares Nacionales. ¡El talento del norte del Perú brilla!"},
-  {i:'🧠',t:"Un gran maestro puede calcular hasta 20 jugadas hacia adelante. El ajedrez es el deporte del intelecto puro."}
-];
-let fi=0;
-function renderFact(){
-  const f=FACTS[fi];
-  document.getElementById('fic').textContent=f.i;
-  document.getElementById('fnum').textContent='Dato #'+(fi+1)+' de '+FACTS.length;
-  document.getElementById('ftxt').textContent=f.t;
-  const dc=document.getElementById('fdots');dc.innerHTML='';
-  FACTS.forEach((_,i)=>{
-    const d=document.createElement('div');d.className='fdot'+(i===fi?' on':'');
-    d.onclick=e=>{e.stopPropagation();fi=i;animFact();};dc.appendChild(d);
-  });
-}
-function animFact(){
-  const c=document.querySelector('.fact-card');
-  c.style.opacity='0';c.style.transform='translateX(12px)';
-  setTimeout(()=>{renderFact();c.style.transition='all .3s ease';c.style.opacity='1';c.style.transform='none';},200);
-}
-function nextFact(){fi=(fi+1)%FACTS.length;animFact();}
-renderFact();
+    const $ = (q, el=document) => el.querySelector(q);
+    const $$ = (q, el=document) => Array.from(el.querySelectorAll(q));
 
-/* ════════════════════════════════════════
-   MOTOR DE AJEDREZ — 100% PROPIO
-   Sin ninguna librería externa
-════════════════════════════════════════ */
-const W=1,B=2;
-const P=1,N=2,Bi=3,R=4,Q=5,K=6; // tipos de pieza
-
-// Estado del juego
-let board,turn,castling,epSq,halfMove,fullMove;
-let selSq,flipped,hints,gameOn,thinking;
-let capH,capC,movesH,lastFrom,lastTo,aiDepth;
-
-function mkPiece(color,type){return{color,type}}
-
-function initBoard(){
-  board=Array(64).fill(null);
-  // Negras
-  [R,N,Bi,Q,K,Bi,N,R].forEach((t,i)=>board[i]=mkPiece(B,t));
-  for(let i=8;i<16;i++) board[i]=mkPiece(B,P);
-  // Blancas
-  for(let i=48;i<56;i++) board[i]=mkPiece(W,P);
-  [R,N,Bi,Q,K,Bi,N,R].forEach((t,i)=>board[56+i]=mkPiece(W,t));
-  turn=W; castling={wk:true,wq:true,bk:true,bq:true};
-  epSq=-1; halfMove=0; fullMove=1;
-}
-
-// índice 0=a8, 7=h8, 56=a1, 63=h1
-function sq(file,rank){return(7-rank)*8+file} // rank 0-7 donde 0=rank1
-function fileOf(s){return s%8}
-function rankOf(s){return 7-Math.floor(s/8)}
-function algToSq(a){return sq('abcdefgh'.indexOf(a[0]),parseInt(a[1])-1)}
-function sqToAlg(s){return 'abcdefgh'[fileOf(s)]+(rankOf(s)+1)}
-
-function inBoard(f,r){return f>=0&&f<8&&r>=0&&r<8}
-
-function copyBoard(){return board.map(p=>p?{...p}:null)}
-
-function isUnderAttack(sq_idx,byColor){
-  const f=fileOf(sq_idx),r=rankOf(sq_idx);
-  // Pawn
-  const pd=byColor===W?1:-1;
-  for(const df of[-1,1]){
-    const nf=f+df,nr=r+pd;
-    if(inBoard(nf,nr)){const p=board[sq(nf,nr)];if(p&&p.color===byColor&&p.type===P)return true;}
-  }
-  // Knight
-  for(const[df,dr] of[[-2,-1],[-2,1],[-1,-2],[-1,2],[1,-2],[1,2],[2,-1],[2,1]]){
-    const nf=f+df,nr=r+dr;
-    if(inBoard(nf,nr)){const p=board[sq(nf,nr)];if(p&&p.color===byColor&&p.type===N)return true;}
-  }
-  // Bishop/Queen diagonals
-  for(const[df,dr] of[[-1,-1],[-1,1],[1,-1],[1,1]]){
-    let cf=f+df,cr=r+dr;
-    while(inBoard(cf,cr)){
-      const p=board[sq(cf,cr)];
-      if(p){if(p.color===byColor&&(p.type===Bi||p.type===Q))return true;break;}
-      cf+=df;cr+=dr;
+    let toastT=null;
+    function toast(msg, ms=2400){
+      const t=$("#toast");
+      t.textContent=msg;
+      t.classList.add("on");
+      clearTimeout(toastT);
+      toastT=setTimeout(()=>t.classList.remove("on"), ms);
     }
-  }
-  // Rook/Queen straights
-  for(const[df,dr] of[[-1,0],[1,0],[0,-1],[0,1]]){
-    let cf=f+df,cr=r+dr;
-    while(inBoard(cf,cr)){
-      const p=board[sq(cf,cr)];
-      if(p){if(p.color===byColor&&(p.type===R||p.type===Q))return true;break;}
-      cf+=df;cr+=dr;
+
+    function goTab(id){
+      $$(".panel").forEach(p=>p.classList.remove("on"));
+      $$(".tab").forEach(t=>t.classList.remove("on"));
+      $("#"+id).classList.add("on");
+      $(`.tab[data-tab="${id}"]`).classList.add("on");
+      window.scrollTo({top:0,behavior:"smooth"});
     }
-  }
-  // King
-  for(const[df,dr] of[[-1,-1],[-1,0],[-1,1],[0,-1],[0,1],[1,-1],[1,0],[1,1]]){
-    const nf=f+df,nr=r+dr;
-    if(inBoard(nf,nr)){const p=board[sq(nf,nr)];if(p&&p.color===byColor&&p.type===K)return true;}
-  }
-  return false;
-}
 
-function findKing(color){
-  for(let i=0;i<64;i++)if(board[i]&&board[i].color===color&&board[i].type===K)return i;
-  return -1;
-}
-
-function inCheck(color){return isUnderAttack(findKing(color),color===W?B:W)}
-
-// Genera pseudomovimientos legales para una casilla
-function genMoves(from,checkLegal=true){
-  const p=board[from];if(!p)return[];
-  const f=fileOf(from),r=rankOf(from);
-  const opp=p.color===W?B:W;
-  const moves=[];
-
-  function tryAdd(to,promo=null){
-    if(to<0||to>63)return;
-    const dst=board[to];
-    if(dst&&dst.color===p.color)return;
-    if(checkLegal){
-      const saved=board[to];
-      const savedEp=epSq;
-      board[to]=p;board[from]=null;
-      // En passant capture
-      let epCap=null;
-      if(p.type===P&&to===epSq){epCap=board[to+(p.color===W?8:-8)];board[to+(p.color===W?8:-8)]=null;}
-      const legal=!inCheck(p.color);
-      board[from]=p;board[to]=saved;
-      if(epCap!==null)board[to+(p.color===W?8:-8)]=epCap;
-      if(!legal)return;
+    // Story: al tocar cualquier tarjeta, enfoca la siguiente
+    function initStory(){
+      const cards = $$("#story .story-card");
+      let idx=0;
+      function focus(i){
+        idx=i;
+        cards.forEach((c,k)=>{c.style.opacity=(k===idx?"1":".74");});
+        cards[idx].scrollIntoView({behavior:"smooth",block:"center"});
+      }
+      function next(){
+        const n=(idx+1)%cards.length;
+        focus(n);
+        toast(n===0?"Reiniciando momentos ↺":"Siguiente ✨", 1200);
+      }
+      cards.forEach(c=>{
+        c.addEventListener("click", next);
+        c.addEventListener("keydown", (e)=>{
+          if(e.key==="Enter"||e.key===" "){e.preventDefault();next();}
+        });
+      });
+      focus(0);
     }
-    if(promo){['q','r','b','n'].forEach(pp=>moves.push({from,to,promo:pp}));}
-    else moves.push({from,to});
-  }
 
-  if(p.type===P){
-    const dir=p.color===W?1:-1;
-    const startR=p.color===W?1:6;
-    const promoR=p.color===W?7:0;
-    // Avance
-    const one=sq(f,r+dir);
-    if(!board[one]){
-      if(r+dir===promoR)tryAdd(one,'q');else tryAdd(one);
-      if(r===startR&&!board[sq(f,r+2*dir)])tryAdd(sq(f,r+2*dir));
-    }
-    // Capturas
-    for(const df of[-1,1]){
-      const tf=f+df,tr=r+dir;
-      if(!inBoard(tf,tr))continue;
-      const ts=sq(tf,tr);
-      if((board[ts]&&board[ts].color===opp)||(ts===epSq)){
-        if(tr===promoR)tryAdd(ts,'q');else tryAdd(ts);
+    // Share
+    async function sharePage(){
+      const data={title:`Bautizo de ${CONFIG.babyName}`,text:`Invitación interactiva al Bautizo de ${CONFIG.babyName}.`,url:location.href};
+      if(navigator.share){
+        try{await navigator.share(data);}catch(e){}
+      }else{
+        try{await navigator.clipboard.writeText(location.href);toast("Enlace copiado 📋");}
+        catch(e){toast("Copia el enlace desde la barra del navegador.");}
       }
     }
-  }
 
-  if(p.type===N){
-    for(const[df,dr] of[[-2,-1],[-2,1],[-1,-2],[-1,2],[1,-2],[1,2],[2,-1],[2,1]]){
-      const nf=f+df,nr=r+dr;
-      if(inBoard(nf,nr))tryAdd(sq(nf,nr));
+    // WhatsApp
+    function buildMsg(attending, guestName){
+      const n=(guestName||"").trim();
+      const who = n ? `Soy ${n}. ` : "";
+      const a = attending ? "✅ Confirmo que asistiré" : "😢 Con pena, no podré asistir";
+      return `${who}${a} al Bautizo de ${CONFIG.babyName}.\n\n⛪ Ceremonia: ${CONFIG.dateLong} — ${CONFIG.timeCeremony}\n📍 ${CONFIG.churchName}\n\n🎉 Recepción: ${CONFIG.timeReception}\n📍 ${CONFIG.hallName}\n\nGracias.`;
     }
-  }
+    function openWA(msg){
+      const text = encodeURIComponent(msg);
+      window.open(`https://wa.me/${CONFIG.whatsappNumber}?text=${text}`,"_blank","noopener");
+    }
 
-  if(p.type===Bi||p.type===Q){
-    for(const[df,dr] of[[-1,-1],[-1,1],[1,-1],[1,1]]){
-      let cf=f+df,cr=r+dr;
-      while(inBoard(cf,cr)){
-        const ts=sq(cf,cr);
-        tryAdd(ts);if(board[ts])break;
-        cf+=df;cr+=dr;
+    // Música demo (sin mp3): tono suave con WebAudio
+    let audioCtx=null, osc=null, gain=null, playing=false;
+    function toggleMusic(){
+      const bi=$("#musicBtn .bi"), bt=$("#musicBtn .bt");
+      try{
+        if(!playing){
+          audioCtx = audioCtx || new (window.AudioContext||window.webkitAudioContext)();
+          osc = audioCtx.createOscillator();
+          gain = audioCtx.createGain();
+          osc.type="sine";
+          osc.frequency.value=220;   // tono suave
+          gain.gain.value=0.0001;
+          osc.connect(gain).connect(audioCtx.destination);
+          osc.start();
+          // fade in
+          gain.gain.setTargetAtTime(0.02, audioCtx.currentTime, 0.2);
+          playing=true;
+          bi.textContent="⏸"; bt.textContent="Música (demo)";
+          toast("Música demo activada 🎶");
+        }else{
+          // fade out y detener
+          gain.gain.setTargetAtTime(0.0001, audioCtx.currentTime, 0.15);
+          setTimeout(()=>{ try{osc.stop();}catch(e){} }, 250);
+          playing=false;
+          bi.textContent="▶"; bt.textContent="Música (demo)";
+          toast("Música en pausa");
+        }
+      }catch(e){
+        toast("Tu navegador bloqueó el audio. Prueba tocando otra vez.");
       }
     }
-  }
 
-  if(p.type===R||p.type===Q){
-    for(const[df,dr] of[[-1,0],[1,0],[0,-1],[0,1]]){
-      let cf=f+df,cr=r+dr;
-      while(inBoard(cf,cr)){
-        const ts=sq(cf,cr);
-        tryAdd(ts);if(board[ts])break;
-        cf+=df;cr+=dr;
-      }
+    // Copiar texto
+    async function copyText(){
+      const txt = `Bautizo de ${CONFIG.babyName}\n${CONFIG.dateLong} — ${CONFIG.timeCeremony}\n${CONFIG.churchName}\nRecepción: ${CONFIG.timeReception}\n${CONFIG.hallName}\n\nTe esperamos con amor.\n${CONFIG.familyLine}`;
+      try{await navigator.clipboard.writeText(txt);toast("Texto copiado 📋");}
+      catch(e){prompt("Copia el texto:", txt);}
     }
-  }
 
-  if(p.type===K){
-    for(const[df,dr] of[[-1,-1],[-1,0],[-1,1],[0,-1],[0,1],[1,-1],[1,0],[1,1]])
-      {const nf=f+df,nr=r+dr;if(inBoard(nf,nr))tryAdd(sq(nf,nr));}
-    // Enroque
-    if(checkLegal&&!inCheck(p.color)){
-      if(p.color===W&&castling.wk&&!board[sq(5,0)]&&!board[sq(6,0)]&&
-        !isUnderAttack(sq(4,0),B)&&!isUnderAttack(sq(5,0),B)&&!isUnderAttack(sq(6,0),B))
-        moves.push({from,to:sq(6,0),castle:'wk'});
-      if(p.color===W&&castling.wq&&!board[sq(3,0)]&&!board[sq(2,0)]&&!board[sq(1,0)]&&
-        !isUnderAttack(sq(4,0),B)&&!isUnderAttack(sq(3,0),B)&&!isUnderAttack(sq(2,0),B))
-        moves.push({from,to:sq(2,0),castle:'wq'});
-      if(p.color===B&&castling.bk&&!board[sq(5,7)]&&!board[sq(6,7)]&&
-        !isUnderAttack(sq(4,7),W)&&!isUnderAttack(sq(5,7),W)&&!isUnderAttack(sq(6,7),W))
-        moves.push({from,to:sq(6,7),castle:'bk'});
-      if(p.color===B&&castling.bq&&!board[sq(3,7)]&&!board[sq(2,7)]&&!board[sq(1,7)]&&
-        !isUnderAttack(sq(4,7),W)&&!isUnderAttack(sq(3,7),W)&&!isUnderAttack(sq(2,7),W))
-        moves.push({from,to:sq(2,7),castle:'bq'});
-    }
-  }
-  return moves;
-}
+    document.addEventListener("DOMContentLoaded", ()=>{
+      $$(".tab").forEach(t=>t.addEventListener("click", ()=>goTab(t.dataset.tab)));
+      $("#startBtn").addEventListener("click", ()=>goTab("momentos"));
+      $("#shareBtn").addEventListener("click", sharePage);
+      $("#musicBtn").addEventListener("click", toggleMusic);
 
-function allMoves(color){
-  const moves=[];
-  for(let i=0;i<64;i++)if(board[i]&&board[i].color===color)moves.push(...genMoves(i));
-  return moves;
-}
+      $("#mapChurch").addEventListener("click", ()=>window.open(CONFIG.mapsChurch,"_blank","noopener"));
+      $("#mapHall").addEventListener("click", ()=>window.open(CONFIG.mapsHall,"_blank","noopener"));
 
-function applyMove(m){
-  const p=board[m.from];
-  const captured=board[m.to];
-  // En passant
-  let epCaptured=null,epCapSq=-1;
-  if(p.type===P&&m.to===epSq){
-    epCapSq=m.to+(p.color===W?8:-8);
-    epCaptured=board[epCapSq];
-    board[epCapSq]=null;
-  }
-  board[m.to]=p;board[m.from]=null;
-  // Promoción
-  if(m.promo){const pt={q:Q,r:R,b:Bi,n:N}[m.promo];board[m.to]=mkPiece(p.color,pt);}
-  // Enroque - mover torre
-  if(m.castle){
-    if(m.castle==='wk'){board[sq(5,0)]=board[sq(7,0)];board[sq(7,0)]=null;}
-    if(m.castle==='wq'){board[sq(3,0)]=board[sq(0,0)];board[sq(0,0)]=null;}
-    if(m.castle==='bk'){board[sq(5,7)]=board[sq(7,7)];board[sq(7,7)]=null;}
-    if(m.castle==='bq'){board[sq(3,7)]=board[sq(0,7)];board[sq(0,7)]=null;}
-  }
-  // Actualizar castling rights
-  if(p.type===K){if(p.color===W){castling.wk=false;castling.wq=false;}else{castling.bk=false;castling.bq=false;}}
-  if(p.type===R){
-    if(m.from===sq(0,0))castling.wq=false;if(m.from===sq(7,0))castling.wk=false;
-    if(m.from===sq(0,7))castling.bq=false;if(m.from===sq(7,7))castling.bk=false;
-  }
-  // En passant square
-  const prevEp=epSq;
-  epSq=(p.type===P&&Math.abs(rankOf(m.to)-rankOf(m.from))===2)?
-    sq(fileOf(m.from),rankOf(m.from)+(p.color===W?1:-1)):-1;
-  if(p.color===B)fullMove++;
-  turn=turn===W?B:W;
-  return{captured,epCaptured,epCapSq,prevEp,prevCastling:{...castling}};
-}
+      $("#rsvpYes").addEventListener("click", ()=>{
+        openWA(buildMsg(true, $("#guestName").value));
+      });
+      $("#rsvpNo").addEventListener("click", ()=>{
+        openWA(buildMsg(false, $("#guestName").value));
+      });
 
-// Notación algebraica simplificada
-function moveToSan(m,p,captured){
-  const types={1:'',2:'N',3:'B',4:'R',5:'Q',6:'K'};
-  const t=types[p.type]||'';
-  const dst=sqToAlg(m.to);
-  if(m.castle)return m.castle==='wk'||m.castle==='bk'?'O-O':'O-O-O';
-  let san=t+(captured||m.to===epSq?((p.type===P?'abcdefgh'[fileOf(m.from)]:t)+'x'):'')+ dst;
-  if(m.promo)san+='='+m.promo.toUpperCase();
-  return san;
-}
+      $("#copyBtn").addEventListener("click", copyText);
 
-/* ════════════════════════════════════════
-   IA — MINIMAX + ALFA-BETA
-════════════════════════════════════════ */
-const PVAL={1:100,2:320,3:330,4:500,5:900,6:20000};
-const PST_P=[0,0,0,0,0,0,0,0,5,10,10,-20,-20,10,10,5,5,-5,-10,0,0,-10,-5,5,0,0,0,20,20,0,0,0,5,5,10,25,25,10,5,5,10,10,20,30,30,20,10,10,50,50,50,50,50,50,50,50,0,0,0,0,0,0,0,0];
-const PST_N=[-50,-40,-30,-30,-30,-30,-40,-50,-40,-20,0,5,5,0,-20,-40,-30,5,10,15,15,10,5,-30,-30,0,15,20,20,15,0,-30,-30,5,15,20,20,15,5,-30,-30,0,10,15,15,10,0,-30,-30,5,0,0,0,0,5,-30,-40,-20,-30,-30,-30,-30,-20,-40];
-const PST_B=[-20,-10,-10,-10,-10,-10,-10,-20,-10,5,0,0,0,0,5,-10,-10,10,10,10,10,10,10,-10,-10,0,10,10,10,10,0,-10,-10,5,5,10,10,5,5,-10,-10,0,5,10,10,5,0,-10,-10,0,0,0,0,0,0,-10,-20,-10,-10,-10,-10,-10,-10,-20];
-const PST_R=[0,0,0,5,5,0,0,0,-5,0,0,0,0,0,0,-5,-5,0,0,0,0,0,0,-5,-5,0,0,0,0,0,0,-5,-5,0,0,0,0,0,0,-5,-5,0,0,0,0,0,0,-5,5,10,10,10,10,10,10,5,0,0,0,0,0,0,0,0];
-const PST_Q=[-20,-10,-10,-5,-5,-10,-10,-20,-10,0,5,0,0,0,0,-10,-10,5,5,5,5,5,0,-10,0,0,5,5,5,5,0,-5,-5,0,5,5,5,5,0,-5,-10,0,5,5,5,5,0,-10,-10,0,0,0,0,0,0,-10,-20,-10,-10,-5,-5,-10,-10,-20];
-const PST_K=[-30,-40,-40,-50,-50,-40,-40,-30,-30,-40,-40,-50,-50,-40,-40,-30,-30,-40,-40,-50,-50,-40,-40,-30,-30,-40,-40,-50,-50,-40,-40,-30,-20,-30,-30,-40,-40,-30,-30,-20,-10,-20,-20,-20,-20,-20,-20,-10,20,20,0,0,0,0,20,20,20,30,10,0,0,10,30,20];
-const PSTS={1:PST_P,2:PST_N,3:PST_B,4:PST_R,5:PST_Q,6:PST_K};
-
-function evalBoard(){
-  const ms=allMoves(W).length,mo=allMoves(B).length;
-  if(ms===0)return inCheck(W)?-99999:0;
-  if(mo===0)return inCheck(B)?99999:0;
-  let score=0;
-  for(let i=0;i<64;i++){
-    const p=board[i];if(!p)continue;
-    const pst=PSTS[p.type];
-    const idx=p.color===W?(63-i):i;
-    const v=(PVAL[p.type]||0)+(pst?pst[idx]:0);
-    score+=p.color===W?v:-v;
-  }
-  return score;
-}
-
-// Snapshot rápido para deshacer en IA
-function snap(){return{board:board.map(p=>p?{...p}:null),turn,castling:{...castling},epSq,halfMove,fullMove}}
-function restore(s){board=s.board;turn=s.turn;castling=s.castling;epSq=s.epSq;halfMove=s.halfMove;fullMove=s.fullMove}
-
-function minimax(depth,alpha,beta,maxing){
-  if(depth===0)return evalBoard();
-  const color=maxing?W:B;
-  const moves=allMoves(color);
-  if(!moves.length)return evalBoard();
-  if(maxing){
-    let best=-Infinity;
-    for(const m of moves){
-      const s=snap();applyMove(m);
-      best=Math.max(best,minimax(depth-1,alpha,beta,false));
-      restore(s);alpha=Math.max(alpha,best);if(beta<=alpha)break;
-    }
-    return best;
-  }else{
-    let best=Infinity;
-    for(const m of moves){
-      const s=snap();applyMove(m);
-      best=Math.min(best,minimax(depth-1,alpha,beta,true));
-      restore(s);beta=Math.min(beta,best);if(beta<=alpha)break;
-    }
-    return best;
-  }
-}
-
-function getBestMove(depth){
-  const moves=allMoves(B);
-  if(!moves.length)return null;
-  let best=null,bestVal=Infinity;
-  const noise=depth<=2?12:4;
-  for(const m of moves){
-    const s=snap();applyMove(m);
-    const v=minimax(depth-1,-Infinity,Infinity,true)+(Math.random()*noise-noise/2);
-    restore(s);
-    if(v<bestVal){bestVal=v;best=m;}
-  }
-  return best;
-}
-
-/* ════════════════════════════════════════
-   INTERFAZ DE JUEGO
-════════════════════════════════════════ */
-const FILES_=['a','b','c','d','e','f','g','h'];
-const PIC_W={1:'♙',2:'♘',3:'♗',4:'♖',5:'♕',6:'♔'};
-const PIC_B={1:'♟',2:'♞',3:'♝',4:'♜',5:'♛',6:'♚'};
-const CICO={1:'♟',2:'♞',3:'♝',4:'♜',5:'♛',6:'♚'};
-const LV_DEPTHS={1:1,2:2,3:3,4:4};
-const LV_NAMES={1:'Fácil 🐣',2:'Medio ⚔️',3:'Difícil 🔥',4:'Experto 💀'};
-
-selSq=null;flipped=false;hints=true;gameOn=false;thinking=false;
-capH=[];capC=[];movesH=[];lastFrom=-1;lastTo=-1;aiDepth=2;
-
-function setLv(n){
-  aiDepth=LV_DEPTHS[n];
-  document.querySelectorAll('.lv-btn').forEach((b,i)=>b.classList.toggle('on',i+1===n));
-  document.getElementById('cpu-lv').textContent=LV_NAMES[n];
-  tip('Nivel: '+LV_NAMES[n]);
-}
-
-function newGame(){
-  initBoard();
-  selSq=null;lastFrom=-1;lastTo=-1;capH=[];capC=[];movesH=[];
-  gameOn=true;thinking=false;
-  setVeil(false);
-  renderBoard();updateCap();updateMoves();
-  setSt('¡Partida iniciada! Tú juegas con blancas ♔ — toca una pieza para mover.');
-  tip('¡A jugar, campeón! Toca una pieza blanca 👑',4000);
-}
-
-function renderBoard(){
-  const cb=document.getElementById('cb');cb.innerHTML='';
-  const rowO=flipped?[0,1,2,3,4,5,6,7]:[7,6,5,4,3,2,1,0]; // rank 7..0
-  const colO=flipped?[7,6,5,4,3,2,1,0]:[0,1,2,3,4,5,6,7];
-
-  // Coords
-  const ct=document.getElementById('ct'),cbot=document.getElementById('cbot');
-  const cl=document.getElementById('cl'),cr=document.getElementById('cright');
-  ct.innerHTML='';cbot.innerHTML='';cl.innerHTML='';cr.innerHTML='';
-  colO.forEach(c=>{
-    let s=document.createElement('span');s.textContent=FILES_[c];ct.appendChild(s);
-    s=document.createElement('span');s.textContent=FILES_[c];cbot.appendChild(s);
-  });
-  rowO.forEach(r=>{
-    let s=document.createElement('span');s.textContent=r+1;cl.appendChild(s);
-    s=document.createElement('span');s.textContent=r+1;cr.appendChild(s);
-  });
-
-  // Movimientos válidos
-  const valid=new Set();
-  if(selSq!==-1&&selSq!==null&&hints){
-    genMoves(selSq).forEach(m=>valid.add(m.to));
-  }
-
-  rowO.forEach((rank,ri)=>{
-    colO.forEach((file,ci)=>{
-      const idx=sq(file,rank);
-      const p=board[idx];
-      const el=document.createElement('div');
-      el.className='sq '+((file+rank)%2===0?'d':'l');
-
-      if(selSq===idx)el.classList.add('sel');
-      if(lastFrom===idx)el.classList.add('lf');
-      if(lastTo===idx)el.classList.add('lt');
-      if(valid.has(idx)){el.classList.add('vm');if(p)el.classList.add('hp');}
-      if(p&&p.type===K&&p.color===turn&&inCheck(turn))el.classList.add('ck');
-
-      if(p)el.textContent=(p.color===W?PIC_W:PIC_B)[p.type];
-
-      // Mini coords en esquinas
-      if(ci===0){const s=document.createElement('span');s.className='sqc bl';s.textContent=rank+1;el.appendChild(s);}
-      if(ri===7){const s=document.createElement('span');s.className='sqc tr';s.textContent=FILES_[file];el.appendChild(s);}
-
-      el.addEventListener('click',()=>onSq(idx));
-      cb.appendChild(el);
+      initStory();
+      toast("Listo. Diseño preliminar cargado ✨", 2000);
     });
-  });
-}
-
-function onSq(idx){
-  if(!gameOn||thinking)return;
-  if(turn!==W)return;
-  const p=board[idx];
-
-  if(selSq===null||selSq===-1){
-    if(p&&p.color===W){selSq=idx;renderBoard();}
-    return;
-  }
-  if(selSq===idx){selSq=null;renderBoard();return;}
-  if(p&&p.color===W){selSq=idx;renderBoard();return;}
-
-  // Intentar mover
-  const legal=genMoves(selSq).find(m=>m.to===idx);
-  if(!legal){selSq=null;renderBoard();return;}
-
-  doHumanMove(legal);
-}
-
-function doHumanMove(m){
-  const p=board[m.from];
-  const captured=board[m.to]||(p.type===P&&m.to===epSq?board[m.to+(p.color===W?8:-8)]:null);
-  const san=moveToSan(m,p,captured);
-  applyMove(m);
-  if(captured)capH.push(captured.type);
-  lastFrom=m.from;lastTo=m.to;selSq=null;
-  movesH.push(san);
-  updateCap();updateMoves();renderBoard();
-  if(checkOver())return;
-  setSt('Computadora pensando… ♞');
-  setVeil(true);
-  setTimeout(doCpu,400);
-}
-
-function doCpu(){
-  thinking=true;
-  try{
-    const m=getBestMove(aiDepth);
-    if(!m){setVeil(false);thinking=false;checkOver();return;}
-    const p=board[m.from];
-    const captured=board[m.to]||(p.type===P&&m.to===epSq?board[m.to+(p.color===B?-8:8)]:null);
-    const san=moveToSan(m,p,captured);
-    applyMove(m);
-    if(captured)capC.push(captured.type);
-    lastFrom=m.from;lastTo=m.to;
-    movesH.push(san);
-  }catch(e){console.warn('CPU error',e);}
-  setVeil(false);thinking=false;
-  updateCap();updateMoves();renderBoard();
-  if(!checkOver())setSt('Tu turno, papá ♔ — toca una pieza blanca para mover.');
-}
-
-function checkOver(){
-  const wMoves=allMoves(W),bMoves=allMoves(B);
-  if(turn===W&&!wMoves.length){
-    const msg=inCheck(W)?'¡La computadora gana! Mejor suerte la próxima 🤖':'Tablas por ahogado. ¡Buen juego! 🤝';
-    setSt(msg);tip(msg,6000);gameOn=false;return true;
-  }
-  if(turn===B&&!bMoves.length){
-    const msg=inCheck(B)?'🏆 ¡GANASTE, PAPÁ! ¡Eres el campeón! 👑':'Tablas por ahogado. ¡Buen juego! 🤝';
-    setSt(msg);tip(msg,6000);gameOn=false;return true;
-  }
-  if(turn===W&&inCheck(W))setSt('⚠️ ¡Tu rey está en jaque! Defíendete 🛡️');
-  return false;
-}
-
-// Historial de estados para deshacer
-let history=[];
-function doHumanMoveWithHistory(m){
-  history.push({
-    board:board.map(p=>p?{...p}:null),
-    turn,castling:{...castling},epSq,
-    capH:[...capH],capC:[...capC],movesH:[...movesH],
-    lastFrom,lastTo
-  });
-  doHumanMove(m);
-}
-
-// Sobreescribir onSq para usar historial
-function onSq(idx){
-  if(!gameOn||thinking)return;
-  if(turn!==W)return;
-  const p=board[idx];
-  if(selSq===null||selSq===-1){
-    if(p&&p.color===W){selSq=idx;renderBoard();}
-    return;
-  }
-  if(selSq===idx){selSq=null;renderBoard();return;}
-  if(p&&p.color===W){selSq=idx;renderBoard();return;}
-  const legal=genMoves(selSq).find(m=>m.to===idx);
-  if(!legal){selSq=null;renderBoard();return;}
-  history.push({
-    board:board.map(p=>p?{...p}:null),
-    turn,castling:{...castling},epSq,
-    capH:[...capH],capC:[...capC],movesH:[...movesH],
-    lastFrom,lastTo
-  });
-  doHumanMove(legal);
-}
-
-function undoMove(){
-  if(!gameOn||thinking||history.length<2)return;
-  // Deshacer jugada CPU + jugada humana
-  const prev=history[history.length-2];
-  history=history.slice(0,-2);
-  board=prev.board;turn=prev.turn;castling=prev.castling;epSq=prev.epSq;
-  capH=prev.capH;capC=prev.capC;movesH=prev.movesH;
-  lastFrom=prev.lastFrom;lastTo=prev.lastTo;
-  selSq=null;
-  updateCap();updateMoves();renderBoard();
-  setSt('Jugada deshecha. ¡Piénsalo bien esta vez! 😄');
-  tip('Movimiento deshecho ↩');
-}
-
-function flipBoard(){flipped=!flipped;renderBoard();tip(flipped?'Vista: negras abajo ⇅':'Vista: blancas abajo ⇅');}
-function toggleHints(){
-  hints=!hints;
-  document.getElementById('hico').textContent=hints?'💡':'🔇';
-  document.getElementById('hlbl').textContent=hints?'Pistas ON':'Pistas OFF';
-  renderBoard();tip(hints?'Pistas activadas 💡':'Pistas desactivadas 🔇');
-}
-function copyPGN(){
-  if(!movesH.length){tip('No hay jugadas aún.');return;}
-  const txt=movesH.reduce((a,m,i)=>i%2===0?a+(i/2+1)+'. '+m+' ':a+m+' ','').trim();
-  if(navigator.clipboard)navigator.clipboard.writeText(txt).then(()=>tip('Jugadas copiadas 📋'));
-  else prompt('Copia estas jugadas:',txt);
-}
-function setVeil(on){document.getElementById('veil').classList.toggle('on',on);thinking=on;}
-function updateCap(){
-  const sv={1:1,2:3,3:3,4:5,5:9,6:0};
-  const sH=capH.reduce((a,t)=>a+(sv[t]||0),0),sC=capC.reduce((a,t)=>a+(sv[t]||0),0);
-  document.getElementById('cap-h').textContent=capH.map(t=>CICO[t]).join('');
-  document.getElementById('cap-c').textContent=capC.map(t=>CICO[t]).join('');
-  const d=sH-sC;
-  document.getElementById('sc-h').textContent=d>0?'+'+d:'';
-  document.getElementById('sc-c').textContent=d<0?'+'+Math.abs(d):'';
-}
-function updateMoves(){
-  const pairs=[];
-  for(let i=0;i<movesH.length;i+=2)
-    pairs.push((i/2+1)+'. '+movesH[i]+(movesH[i+1]?' '+movesH[i+1]:''));
-  const el=document.getElementById('mscroll');
-  el.textContent=pairs.length?pairs.join('  '):'—';
-  el.scrollTop=el.scrollHeight;
-}
-</script>
+  </script>
 </body>
 </html>
